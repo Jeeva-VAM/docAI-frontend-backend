@@ -1,0 +1,739 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Date / Tarikh",
+          "value": [
+            "31/12/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.905,
+          "x": 259,
+          "y": 723,
+          "width": 55,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+
+          
+        },
+        {
+          "id": 1,
+          "text": "Statement Period / Tempoh Penyata",
+          "value": [
+            "01/01/2024",
+            "31/12/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 259,
+          "y": 712,
+          "width": 154,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Certificate No. / No Sijil",
+          "value": [
+            "4006629290"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 259,
+          "y": 700,
+          "width": 100,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Certificate Start Date / Tarikh Sijil Bermula",
+          "value": [
+            "09/04/2019"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 259,
+          "y": 688,
+          "width": 181,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Currency / Matawang",
+          "value": [
+            "Ringgit Malaysia"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.85,
+          "x": 259,
+          "y": 676,
+          "width": 91,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Person Covered",
+          "value": [
+            "OLD SYR XFYL @ SFR XRLLA"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.907,
+          "x": 20,
+          "y": 610,
+          "width": 68,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Address",
+          "value": "MADAM OLD SYR XFYL @ SFR XRLLA\nLL 9 KVXYL HLLA\n96850 Hlla",
+          "annotation_type": "text",
+          "confi_score": 0.196,
+          "x": 166,
+          "y": 373,
+          "width": 66,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 7,
+          "text": "Contribution Method / Cara Caruman",
+          "value": "Cash",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 23,
+          "y": 562,
+          "width": 150,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 8,
+          "text": "Contribution Frequency / Kekerapan Caruman",
+          "value": "Yearly",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 550,
+          "width": 186,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 9,
+          "text": "Contribution Amount / Jumlah Caruman",
+          "value": "6000.00",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 23,
+          "y": 538,
+          "width": 160,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 10,
+          "text": "Contribution Payment Term / Tempoh Pembayaran",
+          "value": "5",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 526,
+          "width": 204,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 11,
+          "text": "Annual Cash Payment (ACP) Option / Pilihan",
+          "value": "To receive the ACP via cash",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 513,
+          "width": 180,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 12,
+          "text": "Plan Code / Kod Pelan",
+          "value": [
+            "0852"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 23,
+          "y": 465,
+          "width": 96,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 13,
+          "text": "Plan Name / Nama",
+          "value": [
+            "SUPREME-I"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.909,
+          "x": 183,
+          "y": 465,
+          "width": 79,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 14,
+          "text": "Amount of Benefits / Jumlah Perlindungan",
+          "value": [
+            "6,000.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 348,
+          "y": 465,
+          "width": 182,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 15,
+          "text": "Transaction Date / Tarikh Transaksi",
+          "value": [
+            "10/07/2024",
+            "05/07/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.958,
+          "x": 46,
+          "y": 374,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 16,
+          "text": "Effective Date / Tarikh Berkuasa",
+          "value": [
+            "05/07/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.977,
+          "x": 166,
+          "y": 374,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 17,
+          "text": "Narration / Penerangan",
+          "value": [
+            "Basic Contribution"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.951,
+          "x": 289,
+          "y": 374,
+          "width": 50,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 18,
+          "text": "Overdue Contribution / Caruman Tertunggak (RM)",
+          "value": [
+            "0.00",
+            "0.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.947,
+          "x": 376,
+          "y": 352,
+          "width": 86,
+          "height": 42,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 19,
+          "text": "Amount / Jumlah (RM)",
+          "value": [
+            "6,000.00",
+            "6,000.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.977,
+          "x": 476,
+          "y": 374,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 20,
+          "text": "Total",
+          "value": "6,000.00",
+          "annotation_type": "text",
+          "confi_score": 0.99,
+          "x": 341,
+          "y": 321,
+          "width": 23,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Universal Takaful Account / Akaun Takaful Universal (UTA)",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.856,
+          "x": 24,
+          "y": 759,
+          "width": 252,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Transaction Date/Tarikh Transaksi",
+          "value": [
+            "01/01/2024",
+            "09/01/2024",
+            "09/02/2024",
+            "09/03/2024",
+            "09/04/2024",
+            "09/05/2024",
+            "09/06/2024",
+            "09/07/2024",
+            "10/07/2024",
+            "09/08/2024",
+            "09/09/2024",
+            "09/10/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.958,
+          "x": 22,
+          "y": 733,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Effective Date/Tarikh Berkuasa",
+          "value": [
+            "01/01/2024",
+            "09/01/2024",
+            "09/01/2024",
+            "09/03/2024",
+            "09/04/2024",
+            "09/05/2024",
+            "09/06/2024",
+            "09/07/2024",
+            "05/07/2024",
+            "09/08/2024",
+            "09/09/2024",
+            "09/10/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.957,
+          "x": 97,
+          "y": 733,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Narration/Penerangan",
+          "value": [
+            "Opening Balance as at / Baki Pembukaan pada 01/01/2024",
+            "Tabarru 1",
+            "Tabarru 2",
+            "Tabarru 1",
+            "Tabarru 2",
+            "Tabarru 1",
+            "Tabarru 2",
+            "Tabarru 1",
+            "Allocated Contribution",
+            "Tabarru 1",
+            "Tabarru 2",
+            "Tabarru 1"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.951,
+          "x": 238,
+          "y": 733,
+          "width": 50,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Total Contribution Amount/RM",
+          "value": [
+            "EMPTY",
+            "-7.35",
+            "-76.25",
+            "-7.59",
+            "-8.58",
+            "-8.76",
+            "-8.93",
+            "-9.11",
+            "5,400.00",
+            "-8.90",
+            "-101.25",
+            "-9.07",
+            "-101.25"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.812,
+          "x": 371,
+          "y": 733,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Account Value/RM",
+          "value": [
+            "10,313.18",
+            "10,305.83",
+            "10,229.58",
+            "10,222.11",
+            "10,145.86",
+            "10,138.27",
+            "10,062.02",
+            "9,952.19",
+            "15,021.64",
+            "15,012.74",
+            "14,911.49",
+            "14,902.42",
+            "14,801.17"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.779,
+          "x": 466,
+          "y": 743,
+          "width": 64,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Closing Balance as at / Baki Penutup pada 31/12/2024",
+          "value": "14,690.67",
+          "annotation_type": "text",
+          "confi_score": 0.98,
+          "x": 27,
+          "y": 337,
+          "width": 229,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Payment Date / Tarikh Pembayaran",
+          "value": [
+            "EMPTY"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 25,
+          "y": 692,
+          "width": 143,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Percentage / Peratus (%)",
+          "value": [
+            "0%"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 306,
+          "y": 692,
+          "width": 102,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Accumulated Amount / Jumlah Terkumpul (RM)",
+          "value": [
+            "0.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.835,
+          "x": 426,
+          "y": 682,
+          "width": 95,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Universal Tafakul Account (UTA) Value / Nilai Akaun Universal Takaful (UTA)",
+          "value": [
+            "EMPTY",
+            "14,690.67",
+            "14,690.67"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.985,
+          "x": 25,
+          "y": 605,
+          "width": 157,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Participant's Reinvestment Account Value (PRA) / Akaun Pelaburan Semula Peserta (PRA)",
+          "value": [
+            "EMPTY",
+            "0.00",
+            "0.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.857,
+          "x": 25,
+          "y": 575,
+          "width": 194,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Less / Tolak ",
+          "value": [
+            "EMPTY",
+            "EMPTY",
+            "EMPTY"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.903,
+          "x": 25,
+          "y": 541,
+          "width": 50,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Indebtedness / Keberhutangan",
+          "value": [
+            "EMPTY",
+            "EMPTY",
+            "0.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.852,
+          "x": 25,
+          "y": 526,
+          "width": 123,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 7,
+          "text": "Surrender Charge / Caj Serahan",
+          "value": [
+            "EMPTY",
+            "EMPTY",
+            "0.00"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 25,
+          "y": 502,
+          "width": 130,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 8,
+          "text": "Net Surrender Value as at / Nilai Bersih Serahan pada",
+          "value": [
+            "EMPTY",
+            "EMPTY",
+            "14,690.67"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.856,
+          "x": 25,
+          "y": 487,
+          "width": 229,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "ASSIGNMENT / SERAH HAK",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.852,
+          "x": 22,
+          "y": 716,
+          "width": 122,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Certificate No",
+          "value": "4006629290",
+          "annotation_type": "text",
+          "confi_score": 0.891,
+          "x": 22,
+          "y": 744,
+          "width": 63,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "No Sijil",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.66,
+          "x": 22,
+          "y": 743,
+          "width": 35,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Certificate No",
+          "value": "4006629290",
+          "annotation_type": "text",
+          "confi_score": 0.892,
+          "x": 22,
+          "y": 744,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "No Sijil",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.66,
+          "x": 22,
+          "y": 743,
+          "width": 35,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "NOMINEE / BENEFISIARI",
+          "value": [
+            "OLD AVV XSRLLA – 50%\nLL 9 KVXYL HLLA\n96850 Hlla",
+            "OFXS OLD SRV LARRX – 50%\nLL 9 KVXYL HLLA\n96850 Hlla"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 22,
+          "y": 716,
+          "width": 107,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Percentage/ Peratus (%)",
+          "value": [
+            "EMPTY",
+            "50%",
+            "50%"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 414,
+          "y": 695,
+          "width": 99,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    }
+  ]
+}

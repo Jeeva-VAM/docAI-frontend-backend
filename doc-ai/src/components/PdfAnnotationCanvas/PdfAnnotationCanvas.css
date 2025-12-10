@@ -1,0 +1,64 @@
+.pdf-annotation-canvas {
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Changed from auto to visible for overlay */
+  position: relative;
+}
+
+.pdf-annotation-canvas canvas {
+  display: block;
+}
+
+.drawing-mode {
+  cursor: crosshair !important;
+  pointer-events: all !important;
+}
+
+.select-mode {
+  cursor: default;
+  pointer-events: none !important; /* Important: prevent interaction when in select mode */
+}
+
+.drawing-mode * {
+  cursor: crosshair !important;
+}
+
+.select-mode * {
+  cursor: pointer;
+  pointer-events: none !important; /* Prevent overlay from blocking clicks */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .pdf-annotation-canvas {
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .drawing-mode {
+    cursor: crosshair !important;
+    /* Touch-friendly drawing on mobile */
+    touch-action: none; /* Prevents scrolling while drawing */
+  }
+  
+  .select-mode {
+    cursor: default;
+    touch-action: auto; /* Allows normal touch interactions */
+  }
+  
+  /* Ensure canvas is touch-responsive */
+  .pdf-annotation-canvas canvas {
+    max-width: 100%;
+    height: auto;
+    touch-action: none; /* Prevent default touch behaviors when drawing */
+  }
+  
+  .drawing-mode canvas {
+    touch-action: none !important;
+  }
+  
+  .select-mode canvas {
+    touch-action: auto;
+  }
+}

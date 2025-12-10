@@ -1,0 +1,41 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        { "id": 0, "text": "Writing Company:", "x": 37.8, "y": 503.64, "width": 84.96, "height": 16.2, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 1, "text": "Commission:", "x": 38.37, "y": 488.16, "width": 60.12, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 2, "text": "Account Number:", "x": 38.16, "y": 469.44, "width": 81.0, "height": 12.96, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 3, "text": "Policy Term:", "x": 37.8, "y": 450.36, "width": 60.48, "height": 13.32, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 4, "text": "Transaction Type:", "x": 38.52, "y": 430.92, "width": 83.52, "height": 13.68, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 5, "text": "Covered Work or Operations:", "x": 38.52, "y": 396.36, "width": 134.64, "height": 14.4, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 6, "text": "Total Coverages Premium:", "x": 146.16, "y": 278.64, "width": 129.96, "height": 14.4, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 7, "text": "Total Surcharge Premium:", "x": 146.52, "y": 259.92, "width": 124.56, "height": 15.12, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 8, "text": "Premium Subtotal:", "x": 146.88, "y": 243.36, "width": 92.16, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 9, "text": "*Total Policy Premium:", "x": 145.8, "y": 224.64, "width": 109.44, "height": 15.48, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 10, "text": "Carrier Fee:", "x": 146.88, "y": 157.68, "width": 55.44, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 11, "text": "Broker Fee:", "x": 146.88, "y": 138.24, "width": 54.72, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 12, "text": "NY Stamping Fee:", "x": 147.24, "y": 118.44, "width": 82.08, "height": 15.12, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 13, "text": "NY SL Tax:", "x": 147.6, "y": 102.24, "width": 30.24, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 14, "text": "Total Cost Incl TRIA:", "x": 146.88, "y": 84.24, "width": 96.48, "height": 11.88, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 15, "text": "Named Insured:", "x": 43.92, "y": 631.44, "width": 77.76, "height": 10.8, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 16, "text": "Producer:", "x": 367.92, "y": 631.44, "width": 49.68, "height": 10.8, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 17, "text": "Address:", "x": 43.2, "y": 594.36, "width": 45.72, "height": 12.96, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 18, "text": "Producer Contact:", "x": 367.92, "y": 595.44, "width": 90.0, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 19, "text": "E-mail:", "x": 399.6, "y": 540.0, "width": 32.4, "height": 11.52, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 20, "text": "Quote Date:", "x": 38.879999999999995, "y": 416.16, "width": 56.879999999999995, "height": 11.519999999999982, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 21, "text": "City, State, Zip:", "x": 41.76, "y": 572.04, "width": 78.47999999999999, "height": 15.120000000000005, "fontName": "g_d6_f2", "fontSize": 9 },
+        { "id": 22, "text": "Total Premium Incl TRIA:", "x": 147.23999999999998, "y": 173.88, "width": 116.64000000000001, "height": 12.960000000000036, "fontName": "g_d6_f2", "fontSize": 9 }
+      ]
+    }
+  ],
+  "summary": {
+    "total_fields": 23,
+    "total_tables": 0,
+    "high_confidence_fields": 0,
+    "average_confidence": 0.75,
+    "detection_quality": "good",
+    "processing_method": "hybrid_detection"
+  }
+}
+ 

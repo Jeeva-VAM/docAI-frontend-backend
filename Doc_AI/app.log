@@ -1,0 +1,288 @@
+2025-11-28 15:02:48,968 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-11-28 15:02:48,969 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:02:48,972 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-11-28 15:02:48,973 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:02:48,977 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-11-28 15:02:48,982 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:02:48,985 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:02:48,993 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:02:48,995 - sqlalchemy.engine.Engine - INFO - [generated in 0.00157s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:02:49,039 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:02:49,040 - sqlalchemy.engine.Engine - INFO - [cached since 0.04708s ago] {'table_name': 'upload_batches', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:02:49,043 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:02:49,045 - sqlalchemy.engine.Engine - INFO - [cached since 0.05171s ago] {'table_name': 'folders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:02:49,049 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:02:49,050 - sqlalchemy.engine.Engine - INFO - [cached since 0.05735s ago] {'table_name': 'files', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:02:49,056 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:02:49,057 - sqlalchemy.engine.Engine - INFO - [generated in 0.00124s] {'typname_1': 'batchstatus', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:02:49,059 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-11-28 15:03:45,655 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-11-28 15:03:45,657 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:03:45,661 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-11-28 15:03:45,662 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:03:45,665 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-11-28 15:03:45,666 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:03:45,669 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:03:45,676 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:03:45,679 - sqlalchemy.engine.Engine - INFO - [generated in 0.00247s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:03:45,730 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:03:45,731 - sqlalchemy.engine.Engine - INFO - [cached since 0.05502s ago] {'table_name': 'upload_batches', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:03:45,734 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:03:45,735 - sqlalchemy.engine.Engine - INFO - [cached since 0.05933s ago] {'table_name': 'folders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:03:45,738 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:03:45,739 - sqlalchemy.engine.Engine - INFO - [cached since 0.06331s ago] {'table_name': 'files', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:03:45,746 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:03:45,747 - sqlalchemy.engine.Engine - INFO - [generated in 0.00168s] {'typname_1': 'batchstatus', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:03:45,750 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-11-28 15:07:41,408 - app.middlewares.logger - INFO - Request: GET /api/projects from 127.0.0.1
+2025-11-28 15:07:41,410 - app.middlewares.logger - INFO - Response: 307 for GET /api/projects (2.70ms)
+2025-11-28 15:07:41,500 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files from 127.0.0.1
+2025-11-28 15:07:41,613 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:41,621 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:41,622 - sqlalchemy.engine.Engine - INFO - [generated in 0.00103s] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:41,671 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files (171.13ms)
+2025-11-28 15:07:41,675 - app.middlewares.logger - INFO - Request: GET /api/projects from 127.0.0.1
+2025-11-28 15:07:41,676 - app.middlewares.logger - INFO - Response: 307 for GET /api/projects (1.17ms)
+2025-11-28 15:07:41,683 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:41,685 - app.middlewares.logger - INFO - Request: GET /api/projects/ from 127.0.0.1
+2025-11-28 15:07:41,692 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:41,700 - sqlalchemy.engine.Engine - INFO - SELECT projects.id AS projects_id, projects.name AS projects_name, projects.project_type AS projects_project_type, projects.description AS projects_description, projects.folder_count AS projects_folder_count, projects.file_count AS projects_file_count, projects.created_at AS projects_created_at 
+FROM projects ORDER BY projects.created_at DESC
+2025-11-28 15:07:41,702 - sqlalchemy.engine.Engine - INFO - [generated in 0.00182s] {}
+2025-11-28 15:07:41,732 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/ (46.55ms)
+2025-11-28 15:07:41,740 - app.middlewares.logger - INFO - Request: GET /api/projects from 127.0.0.1
+2025-11-28 15:07:41,740 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:41,742 - app.middlewares.logger - INFO - Response: 307 for GET /api/projects (1.52ms)
+2025-11-28 15:07:41,748 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders from 127.0.0.1
+2025-11-28 15:07:41,754 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:41,759 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:41,765 - sqlalchemy.engine.Engine - INFO - [generated in 0.00610s] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:41,791 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders (43.30ms)
+2025-11-28 15:07:41,796 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders from 127.0.0.1
+2025-11-28 15:07:41,797 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:41,799 - app.middlewares.logger - INFO - Request: GET /api/projects/ from 127.0.0.1
+2025-11-28 15:07:41,801 - app.middlewares.logger - INFO - Request: GET /api/projects from 127.0.0.1
+2025-11-28 15:07:41,803 - app.middlewares.logger - INFO - Response: 307 for GET /api/projects (1.27ms)
+2025-11-28 15:07:41,809 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:41,814 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:41,817 - sqlalchemy.engine.Engine - INFO - [cached since 0.0578s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:41,822 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders (25.99ms)
+2025-11-28 15:07:42,350 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,352 - sqlalchemy.engine.Engine - INFO - SELECT projects.id AS projects_id, projects.name AS projects_name, projects.project_type AS projects_project_type, projects.description AS projects_description, projects.folder_count AS projects_folder_count, projects.file_count AS projects_file_count, projects.created_at AS projects_created_at 
+FROM projects ORDER BY projects.created_at DESC
+2025-11-28 15:07:42,353 - sqlalchemy.engine.Engine - INFO - [cached since 0.6536s ago] {}
+2025-11-28 15:07:42,380 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/ (581.75ms)
+2025-11-28 15:07:42,386 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files from 127.0.0.1
+2025-11-28 15:07:42,387 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,387 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,390 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders from 127.0.0.1
+2025-11-28 15:07:42,402 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,406 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:42,412 - sqlalchemy.engine.Engine - INFO - [cached since 0.7897s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:42,420 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files (34.32ms)
+2025-11-28 15:07:42,424 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,425 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:42,432 - sqlalchemy.engine.Engine - INFO - [cached since 0.6733s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:42,456 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders (65.90ms)
+2025-11-28 15:07:42,458 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders from 127.0.0.1
+2025-11-28 15:07:42,458 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,466 - app.middlewares.logger - INFO - Request: GET /api/projects/ from 127.0.0.1
+2025-11-28 15:07:42,459 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,470 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,471 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:42,472 - sqlalchemy.engine.Engine - INFO - [cached since 0.7135s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:42,475 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders (16.95ms)
+2025-11-28 15:07:42,484 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,485 - sqlalchemy.engine.Engine - INFO - SELECT projects.id AS projects_id, projects.name AS projects_name, projects.project_type AS projects_project_type, projects.description AS projects_description, projects.folder_count AS projects_folder_count, projects.file_count AS projects_file_count, projects.created_at AS projects_created_at 
+FROM projects ORDER BY projects.created_at DESC
+2025-11-28 15:07:42,486 - sqlalchemy.engine.Engine - INFO - [cached since 0.7865s ago] {}
+2025-11-28 15:07:42,489 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/ (22.43ms)
+2025-11-28 15:07:42,491 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders from 127.0.0.1
+2025-11-28 15:07:42,491 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,501 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files from 127.0.0.1
+2025-11-28 15:07:42,492 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,520 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files from 127.0.0.1
+2025-11-28 15:07:42,523 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,525 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:42,527 - sqlalchemy.engine.Engine - INFO - [cached since 0.7674s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:42,535 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders (43.56ms)
+2025-11-28 15:07:42,538 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:42,539 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:42,542 - sqlalchemy.engine.Engine - INFO - [cached since 0.921s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:42,567 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files (65.44ms)
+2025-11-28 15:07:42,570 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,570 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:42,998 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,000 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,001 - sqlalchemy.engine.Engine - INFO - [cached since 1.38s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:43,022 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files (501.37ms)
+2025-11-28 15:07:43,023 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders from 127.0.0.1
+2025-11-28 15:07:43,024 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders from 127.0.0.1
+2025-11-28 15:07:43,025 - app.middlewares.logger - INFO - Request: GET /api/projects/ from 127.0.0.1
+2025-11-28 15:07:43,033 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,035 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files from 127.0.0.1
+2025-11-28 15:07:43,038 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,039 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:43,040 - sqlalchemy.engine.Engine - INFO - [cached since 1.281s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:43,042 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders (18.67ms)
+2025-11-28 15:07:43,052 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,054 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:43,055 - sqlalchemy.engine.Engine - INFO - [cached since 1.296s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:43,058 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders (33.11ms)
+2025-11-28 15:07:43,064 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,069 - sqlalchemy.engine.Engine - INFO - SELECT projects.id AS projects_id, projects.name AS projects_name, projects.project_type AS projects_project_type, projects.description AS projects_description, projects.folder_count AS projects_folder_count, projects.file_count AS projects_file_count, projects.created_at AS projects_created_at 
+FROM projects ORDER BY projects.created_at DESC
+2025-11-28 15:07:43,070 - sqlalchemy.engine.Engine - INFO - [cached since 1.371s ago] {}
+2025-11-28 15:07:43,094 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/ (68.31ms)
+2025-11-28 15:07:43,099 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files from 127.0.0.1
+2025-11-28 15:07:43,100 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,100 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,101 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,487 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,489 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,490 - sqlalchemy.engine.Engine - INFO - [cached since 1.869s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:43,528 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files (493.07ms)
+2025-11-28 15:07:43,536 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,537 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,539 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,541 - sqlalchemy.engine.Engine - INFO - [cached since 1.919s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:43,549 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files (450.02ms)
+2025-11-28 15:07:43,552 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders from 127.0.0.1
+2025-11-28 15:07:43,554 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders from 127.0.0.1
+2025-11-28 15:07:43,557 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files from 127.0.0.1
+2025-11-28 15:07:43,558 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,571 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,572 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:43,574 - sqlalchemy.engine.Engine - INFO - [cached since 1.815s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:43,583 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/folders (30.38ms)
+2025-11-28 15:07:43,587 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,589 - sqlalchemy.engine.Engine - INFO - SELECT folders.id AS folders_id, folders.project_id AS folders_project_id, folders.name AS folders_name, folders.created_at AS folders_created_at 
+FROM folders 
+WHERE folders.project_id = %(project_id_1)s::UUID ORDER BY folders.created_at DESC
+2025-11-28 15:07:43,591 - sqlalchemy.engine.Engine - INFO - [cached since 1.832s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:43,621 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/folders (66.87ms)
+2025-11-28 15:07:43,625 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,626 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,629 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,634 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,635 - sqlalchemy.engine.Engine - INFO - [cached since 2.014s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:43,639 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files (81.97ms)
+2025-11-28 15:07:43,645 - app.middlewares.logger - INFO - Request: GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files from 127.0.0.1
+2025-11-28 15:07:43,647 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,652 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,654 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,655 - sqlalchemy.engine.Engine - INFO - [cached since 2.034s ago] {'project_id_1': UUID('81451ec6-72cf-416b-bb21-7e509d6a8907')}
+2025-11-28 15:07:43,657 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/81451ec6-72cf-416b-bb21-7e509d6a8907/files (12.09ms)
+2025-11-28 15:07:43,661 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,673 - app.middlewares.logger - INFO - Request: GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files from 127.0.0.1
+2025-11-28 15:07:43,685 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:07:43,687 - sqlalchemy.engine.Engine - INFO - SELECT files.id AS files_id, files.project_id AS files_project_id, files.folder_id AS files_folder_id, files.batch_id AS files_batch_id, files.name AS files_name, files.url AS files_url, files.created_at AS files_created_at 
+FROM files 
+WHERE files.project_id = %(project_id_1)s::UUID ORDER BY files.created_at DESC
+2025-11-28 15:07:43,688 - sqlalchemy.engine.Engine - INFO - [cached since 2.067s ago] {'project_id_1': UUID('4620b725-156f-440d-a1d6-69616e3cd663')}
+2025-11-28 15:07:43,690 - app.middlewares.logger - INFO - Response: 200 for GET /api/projects/4620b725-156f-440d-a1d6-69616e3cd663/files (17.33ms)
+2025-11-28 15:07:43,694 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-11-28 15:07:43,766 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:43,771 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (5.24ms)
+2025-11-28 15:07:44,701 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:44,707 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (6.33ms)
+2025-11-28 15:07:49,154 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:49,163 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (9.72ms)
+2025-11-28 15:07:49,339 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:49,349 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (10.01ms)
+2025-11-28 15:07:50,206 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:50,217 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (10.67ms)
+2025-11-28 15:07:50,428 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:50,432 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (4.69ms)
+2025-11-28 15:07:51,282 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:51,286 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (3.79ms)
+2025-11-28 15:07:51,529 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:51,534 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (4.62ms)
+2025-11-28 15:07:52,340 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:52,349 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (9.29ms)
+2025-11-28 15:07:52,520 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:52,532 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (11.64ms)
+2025-11-28 15:07:53,320 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:53,328 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (8.08ms)
+2025-11-28 15:07:53,459 - app.middlewares.logger - INFO - Request: GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf from 127.0.0.1
+2025-11-28 15:07:53,464 - app.middlewares.logger - INFO - Response: 404 for GET /static/uploads/4620b725-156f-440d-a1d6-69616e3cd663/bbf21de5-4266-4205-a773-6bdb919701d1_RatingWorkSheet_QCA010690.pdf (5.14ms)
+2025-11-28 15:09:13,049 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-11-28 15:09:13,052 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:09:13,058 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-11-28 15:09:13,059 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:09:13,070 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-11-28 15:09:13,072 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-11-28 15:09:13,076 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-11-28 15:09:13,104 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:09:13,107 - sqlalchemy.engine.Engine - INFO - [generated in 0.00298s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:09:13,177 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:09:13,181 - sqlalchemy.engine.Engine - INFO - [cached since 0.07736s ago] {'table_name': 'upload_batches', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:09:13,186 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:09:13,188 - sqlalchemy.engine.Engine - INFO - [cached since 0.08415s ago] {'table_name': 'folders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:09:13,192 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:09:13,195 - sqlalchemy.engine.Engine - INFO - [cached since 0.09154s ago] {'table_name': 'files', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:09:13,208 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-11-28 15:09:13,210 - sqlalchemy.engine.Engine - INFO - [generated in 0.00199s] {'typname_1': 'batchstatus', 'nspname_1': 'pg_catalog'}
+2025-11-28 15:09:13,218 - sqlalchemy.engine.Engine - INFO - COMMIT

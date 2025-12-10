@@ -1,0 +1,144 @@
+.resizable-divider {
+  position: absolute;
+  z-index: 10;
+  background: transparent;
+  user-select: none;
+}
+
+.resizable-divider.vertical {
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  margin-left: -4px;
+  cursor: col-resize;
+}
+
+.resizable-divider.horizontal {
+  left: 0;
+  right: 0;
+  height: 8px;
+  margin-top: -4px;
+  cursor: row-resize;
+}
+
+.resizable-divider:hover .divider-handle,
+.resizable-divider.dragging .divider-handle {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.divider-handle {
+  position: absolute;
+  background: var(--primary-sea-blue);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(8, 145, 178, 0.3);
+}
+
+.resizable-divider.vertical .divider-handle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 6px;
+  height: 40px;
+}
+
+.resizable-divider.horizontal .divider-handle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 40px;
+  height: 6px;
+}
+
+.resizable-divider:hover .divider-handle,
+.resizable-divider.dragging .divider-handle {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.divider-grip {
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.resizable-divider.vertical .divider-grip {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.resizable-divider.dragging {
+  z-index: 1000;
+}
+
+.resizable-divider.dragging .divider-handle {
+  background: var(--primary-sea-blue-dark);
+  box-shadow: 0 4px 8px rgba(8, 145, 178, 0.4);
+}
+
+/* Prevent text selection during drag */
+.resizable-divider.dragging,
+.resizable-divider.dragging * {
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+.resizable-divider.dragging {
+  pointer-events: auto !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .resizable-divider {
+    /* Make divider more touch-friendly on mobile */
+    z-index: 20;
+  }
+  
+  .resizable-divider.vertical {
+    width: 16px; /* Wider touch target */
+    margin-left: -8px;
+  }
+  
+  .resizable-divider.horizontal {
+    height: 16px; /* Taller touch target */
+    margin-top: -8px;
+  }
+  
+  .divider-handle {
+    /* Always visible on mobile for easier interaction */
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .resizable-divider.vertical .divider-handle {
+    width: 8px;
+    height: 60px; /* Taller for easier grabbing */
+  }
+  
+  .resizable-divider.horizontal .divider-handle {
+    width: 60px; /* Wider for easier grabbing */
+    height: 8px;
+  }
+  
+  .resizable-divider:hover .divider-handle,
+  .resizable-divider.dragging .divider-handle {
+    opacity: 1;
+  }
+  
+  .divider-grip {
+    font-size: 10px; /* Slightly larger for better visibility */
+  }
+  
+  /* Enhanced visual feedback for mobile */
+  .resizable-divider.dragging .divider-handle {
+    box-shadow: 0 6px 12px rgba(8, 145, 178, 0.5);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}

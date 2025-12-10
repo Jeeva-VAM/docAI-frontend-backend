@@ -1,0 +1,14 @@
+{
+  "test": "This is a working JSON file",
+  "message": "If you can see this, the JSON viewer is working!",
+  "data": {
+    "name": "Test Document",
+    "version": "1.0",
+    "features": [
+      "JSON parsing",
+      "Tree view",
+      "Form view"
+    ]
+  },
+  "timestamp": "2025-10-15T12:00:00Z"
+}

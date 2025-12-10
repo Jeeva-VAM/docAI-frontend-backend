@@ -1,0 +1,92 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "POLICY NUMBER:",
+          "x": 50,
+          "y": 781,
+          "width": 75,
+          "height": 9,
+          "fontName": "g_d6_f1",
+          "fontSize": 9,
+          "value": "POL-2025-12345",
+          "annotation_type": "llm",
+          "confi_score": 0.95
+        },
+        {
+          "id": 1,
+          "text": "Premises Number",
+          "x": 53,
+          "y": 629,
+          "width": 80,
+          "height": 9,
+          "fontName": "g_d6_f2",
+          "fontSize": 9,
+          "value": "PREM-001",
+          "annotation_type": "llm",
+          "confi_score": 0.88
+        },
+        {
+          "id": 2,
+          "text": "Building Number",
+          "x": 295,
+          "y": 629,
+          "width": 76,
+          "height": 9,
+          "fontName": "g_d6_f2",
+          "fontSize": 9,
+          "value": "BLD-A1",
+          "annotation_type": "llm",
+          "confi_score": 0.92
+        },
+        {
+          "id": 3,
+          "text": "Description of Coverage",
+          "x": 53,
+          "y": 617,
+          "width": 109,
+          "height": 9,
+          "fontName": "g_d6_f2",
+          "fontSize": 9,
+          "value": "Commercial Property Insurance",
+          "annotation_type": "llm",
+          "confi_score": 0.87
+        },
+        {
+          "id": 4,
+          "text": "Manually Extracted Field",
+          "x": 400,
+          "y": 750,
+          "width": 120,
+          "height": 15,
+          "fontName": "manual_annotation",
+          "fontSize": 12,
+          "value": "Manually Extracted Field",
+          "annotation_type": "manual",
+          "confi_score": 0.96,
+          "pageNumber": 1,
+          "timestamp": 1729586400000,
+          "boundingBox": {
+            "x1": 400,
+            "y1": 750,
+            "width": 120,
+            "height": 15
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_fields": 5,
+    "total_tables": 1,
+    "high_confidence_fields": 3,
+    "average_confidence": 0.916,
+    "detection_quality": "good",
+    "processing_method": "hybrid_detection",
+    "manual_annotations": 1,
+    "last_updated": "2025-10-22T10:30:00Z"
+  }
+}

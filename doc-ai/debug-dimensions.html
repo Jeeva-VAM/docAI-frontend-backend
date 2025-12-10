@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Dimension Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .calculation {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #9c27b0;
+        }
+    </style>
+</head>
+<body>
+    <h1>14-inch Screen PDF Auto-fit Analysis</h1>
+    
+    <div class="info-box">
+        <h2>Current Browser Dimensions</h2>
+        <p><strong>Window Width:</strong> <span id="windowWidth"></span>px</p>
+        <p><strong>Window Height:</strong> <span id="windowHeight"></span>px</p>
+        <p><strong>Screen Width:</strong> <span id="screenWidth"></span>px</p>
+        <p><strong>Screen Height:</strong> <span id="screenHeight"></span>px</p>
+        <p><strong>Device Pixel Ratio:</strong> <span id="dpr"></span></p>
+    </div>
+
+    <div class="info-box">
+        <h2>PDF Viewer Container Analysis</h2>
+        <div class="highlight">
+            <p><strong>Estimated PDF Panel Width (50% split):</strong> <span id="pdfPanelWidth"></span>px</p>
+            <p><strong>Estimated PDF Content Height:</strong> <span id="pdfContentHeight"></span>px</p>
+            <p><strong>Available PDF Display Area:</strong> <span id="displayArea"></span>px²</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h2>Standard PDF Page Dimensions</h2>
+        <div class="highlight">
+            <p><strong>A4 Paper (72 DPI):</strong> 595 × 842 pixels</p>
+            <p><strong>A4 Paper (150 DPI):</strong> 1240 × 1754 pixels</p>
+            <p><strong>A4 Paper (300 DPI):</strong> 2480 × 3508 pixels</p>
+            <p><strong>Letter (72 DPI):</strong> 612 × 792 pixels</p>
+            <p><strong>Letter (150 DPI):</strong> 1275 × 1650 pixels</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h2>Auto-fit Scale Calculations</h2>
+        <div class="calculation">
+            <h3>Current Logic (90% utilization):</h3>
+            <p><strong>For A4 at 150 DPI (1240×1754):</strong></p>
+            <p>Width Scale: <span id="widthScale90"></span></p>
+            <p>Height Scale: <span id="heightScale90"></span></p>
+            <p>Final Scale (min): <span id="finalScale90"></span></p>
+            <p>Resulting Zoom: <span id="zoom90"></span>%</p>
+        </div>
+
+        <div class="calculation">
+            <h3>Optimal Logic (89% utilization - your perfect fit):</h3>
+            <p><strong>For A4 at 150 DPI (1240×1754):</strong></p>
+            <p>Width Scale: <span id="widthScale89"></span></p>
+            <p>Height Scale: <span id="heightScale89"></span></p>
+            <p>Final Scale (min): <span id="finalScale89"></span></p>
+            <p>Resulting Zoom: <span id="zoom89"></span>%</p>
+        </div>
+
+        <div class="calculation">
+            <h3>Screen-size Adjusted Logic:</h3>
+            <p><strong>14-inch screen factor:</strong> <span id="screenFactor"></span></p>
+            <p><strong>Adjusted utilization:</strong> <span id="adjustedUtil"></span>%</p>
+            <p><strong>Recommended Scale:</strong> <span id="recommendedScale"></span></p>
+            <p><strong>Recommended Zoom:</strong> <span id="recommendedZoom"></span>%</p>
+        </div>
+    </div>
+
+    <script>
+        // Get browser dimensions
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const screenWidth = screen.width;
+        const screenHeight = screen.height;
+        const dpr = window.devicePixelRatio;
+
+        // Update display
+        document.getElementById('windowWidth').textContent = windowWidth;
+        document.getElementById('windowHeight').textContent = windowHeight;
+        document.getElementById('screenWidth').textContent = screenWidth;
+        document.getElementById('screenHeight').textContent = screenHeight;
+        document.getElementById('dpr').textContent = dpr;
+
+        // Estimate PDF panel dimensions (50% split, minus header)
+        const pdfPanelWidth = Math.floor(windowWidth * 0.5);
+        const headerHeight = 48; // From CSS
+        const pdfContentHeight = windowHeight - headerHeight - 40; // minus some margin
+        const displayArea = pdfPanelWidth * pdfContentHeight;
+
+        document.getElementById('pdfPanelWidth').textContent = pdfPanelWidth;
+        document.getElementById('pdfContentHeight').textContent = pdfContentHeight;
+        document.getElementById('displayArea').textContent = displayArea.toLocaleString();
+
+        // PDF dimensions (A4 at 150 DPI)
+        const pdfWidth = 1240;
+        const pdfHeight = 1754;
+
+        // Current logic calculations (90%)
+        const widthScale90 = (pdfPanelWidth * 0.9) / pdfWidth;
+        const heightScale90 = (pdfContentHeight * 0.9) / pdfHeight;
+        const finalScale90 = Math.min(widthScale90, heightScale90);
+        const zoom90 = Math.round(finalScale90 * 100);
+
+        document.getElementById('widthScale90').textContent = widthScale90.toFixed(4);
+        document.getElementById('heightScale90').textContent = heightScale90.toFixed(4);
+        document.getElementById('finalScale90').textContent = finalScale90.toFixed(4);
+        document.getElementById('zoom90').textContent = zoom90;
+
+        // Optimal logic calculations (89%)
+        const widthScale89 = (pdfPanelWidth * 0.89) / pdfWidth;
+        const heightScale89 = (pdfContentHeight * 0.89) / pdfHeight;
+        const finalScale89 = Math.min(widthScale89, heightScale89);
+        const zoom89 = Math.round(finalScale89 * 100);
+
+        document.getElementById('widthScale89').textContent = widthScale89.toFixed(4);
+        document.getElementById('heightScale89').textContent = heightScale89.toFixed(4);
+        document.getElementById('finalScale89').textContent = finalScale89.toFixed(4);
+        document.getElementById('zoom89').textContent = zoom89;
+
+        // Screen-size adjusted logic
+        // 14-inch screens typically have higher DPI, so we need tighter fitting
+        // Standard laptop screens: 13"-15" = higher pixel density
+        // Assuming 14" diagonal with ~1920x1080 or similar resolution
+        const screenDiagonal = 14; // inches
+        const standardDiagonal = 15.6; // reference size
+        const screenFactor = screenDiagonal / standardDiagonal;
+        
+        // Adjust utilization based on screen size - smaller screens need tighter fit
+        const baseUtilization = 0.89; // Your perfect 89%
+        const adjustedUtilization = baseUtilization + (1 - screenFactor) * 0.02; // Slight adjustment
+        
+        const adjustedWidthScale = (pdfPanelWidth * adjustedUtilization) / pdfWidth;
+        const adjustedHeightScale = (pdfContentHeight * adjustedUtilization) / pdfHeight;
+        const recommendedScale = Math.min(adjustedWidthScale, adjustedHeightScale);
+        const recommendedZoom = Math.round(recommendedScale * 100);
+
+        document.getElementById('screenFactor').textContent = screenFactor.toFixed(3);
+        document.getElementById('adjustedUtil').textContent = (adjustedUtilization * 100).toFixed(1);
+        document.getElementById('recommendedScale').textContent = recommendedScale.toFixed(4);
+        document.getElementById('recommendedZoom').textContent = recommendedZoom;
+
+        // Add responsive analysis
+        const responsiveInfo = document.createElement('div');
+        responsiveInfo.className = 'info-box';
+        responsiveInfo.innerHTML = `
+            <h2>Responsive Analysis</h2>
+            <div class="highlight">
+                <p><strong>Current utilization gap:</strong> ${(0.9 - 0.89) * 100}% (why 90% is too large)</p>
+                <p><strong>Pixel difference at current size:</strong> ${Math.round((widthScale90 - widthScale89) * pdfWidth)}px width</p>
+                <p><strong>Recommended utilization for 14" screen:</strong> ${(adjustedUtilization * 100).toFixed(1)}%</p>
+            </div>
+        `;
+        document.body.appendChild(responsiveInfo);
+    </script>
+</body>
+</html>

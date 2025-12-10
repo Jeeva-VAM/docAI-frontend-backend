@@ -1,0 +1,33 @@
+{
+  "name": "Sample Document",
+  "type": "test",
+  "metadata": {
+    "author": "DocAI System",
+    "created": "2025-10-15",
+    "version": "1.0"
+  },
+  "content": {
+    "title": "Test JSON File",
+    "description": "This is a sample JSON file to test the JSON viewer functionality",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Introduction",
+        "text": "This section introduces the document"
+      },
+      {
+        "id": 2,
+        "title": "Main Content",
+        "text": "This is the main content of the document"
+      }
+    ]
+  },
+  "settings": {
+    "theme": "light",
+    "autoSave": true,
+    "notifications": {
+      "email": true,
+      "push": false
+    }
+  }
+}

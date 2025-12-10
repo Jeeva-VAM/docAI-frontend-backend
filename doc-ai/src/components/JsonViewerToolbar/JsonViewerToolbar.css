@@ -1,0 +1,116 @@
+.json-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.875rem;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.tool-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-button:hover:not(:disabled) {
+  border-color: var(--primary-sea-blue);
+  background: var(--bg-primary);
+}
+
+.tool-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-light);
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.toggle-button:hover {
+  border-color: var(--primary-sea-blue);
+  background: var(--bg-primary);
+}
+
+.toggle-button.active {
+  background: var(--primary-sea-blue);
+  border-color: var(--primary-sea-blue-dark);
+  color: white;
+}
+
+.show-all-toggle {
+  margin-left: 0.5rem;
+}
+
+.show-all-toggle.active {
+  background: var(--primary-light-green);
+  border-color: var(--primary-light-green-dark);
+  color: white;
+}
+
+.show-all-toggle:hover:not(.active) {
+  border-color: var(--primary-light-green);
+  background: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .json-viewer-toolbar {
+    padding: 0.4rem 0.5rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .toolbar-section {
+    gap: 0.4rem;
+  }
+  
+  .tool-button {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .toggle-button {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}

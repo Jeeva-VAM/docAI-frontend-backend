@@ -1,0 +1,50 @@
+{
+  "pages": [
+    {
+      "page_number": 1,
+      "fields": [
+        {
+          "label": "Customer Name",
+          "text_content": "Alice Johnson",
+          "confidence": 0.95,
+          "type": "text_field"
+        },
+        {
+          "label": "Account Number",
+          "text_content": "ACC-123456",
+          "confidence": 0.92,
+          "type": "text_field"
+        },
+        {
+          "label": "Policy Type",
+          "text_content": "Auto Insurance",
+          "confidence": 0.88,
+          "type": "text_field"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "fields": [
+        {
+          "label": "Premium Amount",
+          "text_content": "1250.00",
+          "confidence": 0.96,
+          "type": "number_field"
+        },
+        {
+          "label": "Deductible",
+          "text_content": "500",
+          "confidence": 0.94,
+          "type": "number_field"
+        },
+        {
+          "label": "Coverage Start Date",
+          "text_content": "2024-02-01",
+          "confidence": 0.91,
+          "type": "date_field"
+        }
+      ]
+    }
+  ]
+}

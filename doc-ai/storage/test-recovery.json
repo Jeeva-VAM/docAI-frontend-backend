@@ -1,0 +1,28 @@
+{
+  "document": {
+    "title": "Test Document",
+    "type": "recovery_test",
+    "created": "2025-10-15"
+  },
+  "content": {
+    "message": "This is a test JSON file to verify the viewer is working correctly",
+    "status": "active",
+    "data": [
+      {
+        "id": 1,
+        "name": "Test Item 1",
+        "value": "Sample Value"
+      },
+      {
+        "id": 2,
+        "name": "Test Item 2",
+        "value": "Another Value"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0",
+    "author": "System Recovery",
+    "notes": "Created after clearing storage"
+  }
+}

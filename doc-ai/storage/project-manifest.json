@@ -1,0 +1,21 @@
+{
+  "projectName": "DocAI Project",
+  "created": "2025-10-15T00:00:00.000Z",
+  "lastModified": "2025-10-15T00:00:00.000Z",
+  "files": [],
+  "storageLocation": "./storage",
+  "instructions": {
+    "message": "This is a sample project manifest for DocAI React",
+    "fileStorage": {
+      "location": "Files are downloaded to your browser's Downloads folder",
+      "organization": "You can manually move files to this storage directory",
+      "tracking": "This manifest tracks all uploaded files and their status"
+    },
+    "usage": [
+      "Upload files through the drag-and-drop interface",
+      "Files are automatically downloaded to ~/Downloads/",
+      "Export this manifest to backup your project",
+      "Import manifest files to restore projects"
+    ]
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Date / Tarikh",
+          "annotation_type": "text",
+          "confi_score": 0.905,
+          "x": 259,
+          "y": 723,
+          "width": 55,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Statement Period / Tempoh Penyata",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 259,
+          "y": 712,
+          "width": 154,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Certificate No. / No Sijil",
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 259,
+          "y": 700,
+          "width": 100,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Certificate Start Date / Tarikh Sijil Bermula",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 259,
+          "y": 688,
+          "width": 181,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Currency / Matawang",
+          "annotation_type": "text",
+          "confi_score": 0.85,
+          "x": 259,
+          "y": 676,
+          "width": 91,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Person Covered",
+          "annotation_type": "text",
+          "confi_score": 0.907,
+          "x": 20,
+          "y": 610,
+          "width": 68,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Address",
+          "annotation_type": "text",
+          "confi_score": 0.196,
+          "x": 166,
+          "y": 373,
+          "width": 66,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 7,
+          "text": "Contribution Method / Cara Caruman",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 23,
+          "y": 562,
+          "width": 150,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 8,
+          "text": "Contribution Frequency / Kekerapan Caruman",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 550,
+          "width": 186,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 9,
+          "text": "Contribution Amount / Jumlah Caruman",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 23,
+          "y": 538,
+          "width": 160,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 10,
+          "text": "Contribution Payment Term / Tempoh Pembayaran",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 526,
+          "width": 204,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 11,
+          "text": "Annual Cash Payment (ACP) Option / Pilihan",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 23,
+          "y": 513,
+          "width": 180,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 12,
+          "text": "Plan Code / Kod Pelan",
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 23,
+          "y": 465,
+          "width": 96,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 13,
+          "text": "Plan Name / Nama",
+          "annotation_type": "text",
+          "confi_score": 0.909,
+          "x": 183,
+          "y": 465,
+          "width": 79,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 14,
+          "text": "Amount of Benefits / Jumlah Perlindungan",
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 348,
+          "y": 465,
+          "width": 182,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 15,
+          "text": "Transaction Date / Tarikh Transaksi",
+          "annotation_type": "text",
+          "confi_score": 0.958,
+          "x": 46,
+          "y": 374,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 16,
+          "text": "Effective Date / Tarikh Berkuasa",
+          "annotation_type": "text",
+          "confi_score": 0.977,
+          "x": 166,
+          "y": 374,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 17,
+          "text": "Narration / Penerangan",
+          "annotation_type": "text",
+          "confi_score": 0.951,
+          "x": 289,
+          "y": 374,
+          "width": 50,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 18,
+          "text": "Overdue Contribution / Caruman Tertunggak (RM)",
+          "annotation_type": "text",
+          "confi_score": 0.947,
+          "x": 376,
+          "y": 352,
+          "width": 86,
+          "height": 42,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 19,
+          "text": "Amount / Jumlah (RM)",
+          "annotation_type": "text",
+          "confi_score": 0.977,
+          "x": 476,
+          "y": 374,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 20,
+          "text": "Total",
+          "annotation_type": "text",
+          "confi_score": 0.99,
+          "x": 341,
+          "y": 321,
+          "width": 23,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Universal Takaful Account / Akaun Takaful Universal (UTA)",
+          "annotation_type": "text",
+          "confi_score": 0.856,
+          "x": 24,
+          "y": 759,
+          "width": 252,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Transaction Date/Tarikh Transaksi",
+          "annotation_type": "text",
+          "confi_score": 0.958,
+          "x": 22,
+          "y": 733,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Effective Date/Tarikh Berkuasa",
+          "annotation_type": "text",
+          "confi_score": 0.957,
+          "x": 97,
+          "y": 733,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Narration/Penerangan",
+          "annotation_type": "text",
+          "confi_score": 0.951,
+          "x": 238,
+          "y": 733,
+          "width": 50,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Total Contribution Amount/RM",
+          "annotation_type": "text",
+          "confi_score": 0.812,
+          "x": 371,
+          "y": 733,
+          "width": 72,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Account Value/RM",
+          "annotation_type": "text",
+          "confi_score": 0.779,
+          "x": 466,
+          "y": 743,
+          "width": 64,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Closing Balance as at / Baki Penutup pada 31/12/2024",
+          "annotation_type": "text",
+          "confi_score": 0.98,
+          "x": 27,
+          "y": 337,
+          "width": 229,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Payment Date / Tarikh Pembayaran",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 25,
+          "y": 692,
+          "width": 143,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Percentage / Peratus (%)",
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 306,
+          "y": 692,
+          "width": 102,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "Accumulated Amount / Jumlah Terkumpul (RM)",
+          "annotation_type": "text",
+          "confi_score": 0.835,
+          "x": 426,
+          "y": 682,
+          "width": 95,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Universal Tafakul Account (UTA) Value / Nilai Akaun Universal Takaful (UTA)",
+          "annotation_type": "text",
+          "confi_score": 0.985,
+          "x": 25,
+          "y": 605,
+          "width": 157,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 4,
+          "text": "Participant's Reinvestment Account Value (PRA) / Akaun Pelaburan Semula Peserta (PRA)",
+          "annotation_type": "text",
+          "confi_score": 0.857,
+          "x": 25,
+          "y": 575,
+          "width": 194,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 5,
+          "text": "Less / Tolak ",
+          "annotation_type": "text",
+          "confi_score": 0.903,
+          "x": 25,
+          "y": 541,
+          "width": 50,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 6,
+          "text": "Indebtedness / Keberhutangan",
+          "annotation_type": "text",
+          "confi_score": 0.852,
+          "x": 25,
+          "y": 526,
+          "width": 123,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 7,
+          "text": "Surrender Charge / Caj Serahan",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 25,
+          "y": 502,
+          "width": 130,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 8,
+          "text": "Net Surrender Value as at / Nilai Bersih Serahan pada",
+          "annotation_type": "text",
+          "confi_score": 0.856,
+          "x": 25,
+          "y": 487,
+          "width": 229,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "ASSIGNMENT / SERAH HAK",
+          "annotation_type": "text",
+          "confi_score": 0.852,
+          "x": 22,
+          "y": 716,
+          "width": 122,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "Certificate No",
+          "annotation_type": "text",
+          "confi_score": 0.891,
+          "x": 22,
+          "y": 744,
+          "width": 63,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "No Sijil",
+          "annotation_type": "text",
+          "confi_score": 0.66,
+          "x": 22,
+          "y": 743,
+          "width": 35,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "Certificate No",
+          "annotation_type": "text",
+          "confi_score": 0.892,
+          "x": 22,
+          "y": 744,
+          "width": 66,
+          "height": 20,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 1,
+          "text": "No Sijil",
+          "annotation_type": "text",
+          "confi_score": 0.66,
+          "x": 22,
+          "y": 743,
+          "width": 35,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 2,
+          "text": "NOMINEE / BENEFISIARI",
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 22,
+          "y": 716,
+          "width": 107,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        },
+        {
+          "id": 3,
+          "text": "Percentage/ Peratus (%)",
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 414,
+          "y": 695,
+          "width": 99,
+          "height": 10,
+          "fontName": "g_d6_f1",
+          "fontSize": 9
+        }
+      ]
+    }
+  ]
+}

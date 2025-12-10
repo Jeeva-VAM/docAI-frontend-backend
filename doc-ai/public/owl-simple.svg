@@ -1,0 +1,40 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Owl body (bright green) -->
+  <ellipse cx="32" cy="48" rx="28" ry="20" fill="#4CBB17"/>
+  
+  <!-- Owl head (bright green) -->
+  <circle cx="32" cy="28" r="22" fill="#4CBB17"/>
+  
+  <!-- Left ear tuft (blue) -->
+  <path d="M18 8 L22 2 L28 14 Z" fill="#1E88E5"/>
+  
+  <!-- Right ear tuft (blue) -->
+  <path d="M46 8 L42 2 L36 14 Z" fill="#1E88E5"/>
+  
+  <!-- Left wing (blue) -->
+  <ellipse cx="12" cy="42" rx="10" ry="18" fill="#1E88E5"/>
+  
+  <!-- Right wing (blue) -->
+  <ellipse cx="52" cy="42" rx="10" ry="18" fill="#1E88E5"/>
+  
+  <!-- Left eye outer (white) -->
+  <circle cx="26" cy="24" r="8" fill="white"/>
+  
+  <!-- Right eye outer (white) -->
+  <circle cx="38" cy="24" r="8" fill="white"/>
+  
+  <!-- Left eye pupil (dark) -->
+  <circle cx="26" cy="24" r="5" fill="#2E2E2E"/>
+  
+  <!-- Right eye pupil (dark) -->
+  <circle cx="38" cy="24" r="5" fill="#2E2E2E"/>
+  
+  <!-- Left eye highlight -->
+  <ellipse cx="28" cy="22" rx="2" ry="2.5" fill="white"/>
+  
+  <!-- Right eye highlight -->
+  <ellipse cx="40" cy="22" rx="2" ry="2.5" fill="white"/>
+  
+  <!-- Beak (orange) -->
+  <path d="M32 32 L28 38 L36 38 Z" fill="#FF8C00"/>
+</svg>

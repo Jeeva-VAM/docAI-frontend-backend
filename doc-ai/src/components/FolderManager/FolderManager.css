@@ -1,0 +1,334 @@
+/**
+ * Folder Manager Styles
+ */
+
+.folder-manager {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.folder-manager-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.folder-manager-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.create-folder-btn {
+  padding: 6px;
+  background: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-folder-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.create-folder-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.folder-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.folders-list {
+  min-height: 60px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.loading-state,
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #6c757d;
+  font-size: 12px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-icon {
+  opacity: 0.5;
+}
+
+.folder-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  padding: 2px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.folder-item:hover {
+  background: #ffffff;
+}
+
+.folder-item.selected {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+}
+
+.folder-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  font-size: 12px;
+  color: #495057;
+}
+
+.folder-button:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.folder-name {
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-count {
+  font-size: 11px;
+  color: #6c757d;
+  margin-left: auto;
+}
+
+.delete-folder-btn {
+  padding: 4px;
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  border-radius: 2px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.delete-folder-btn:hover {
+  opacity: 1;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+/* Folder Create Modal Styles */
+.folder-create-modal {
+  width: 400px;
+  max-width: 90vw;
+}
+
+.create-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.input-help {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #dee2e6;
+}
+
+.modal-footer button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #545b62;
+}
+
+.create-btn {
+  background: #28a745;
+  color: white;
+}
+
+.create-btn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.create-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Hierarchical Folder Display Styles */
+.folder-tree-item {
+  margin-bottom: 2px;
+}
+
+.folder-tree-item .folder-item {
+  margin-bottom: 0;
+}
+
+.folder-button-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.folder-expand-btn {
+  padding: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.folder-expand-btn:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.folder-spacer {
+  width: 18px; /* Same width as expand button */
+  height: 18px;
+  margin-right: 4px;
+}
+
+.folder-children {
+  margin-left: 20px;
+  padding-left: 8px;
+  border-left: 1px solid #dee2e6;
+}
+
+/* Depth-based indentation for nested folders */
+.folder-tree-item.depth-0 {
+  margin-left: 0;
+}
+
+.folder-tree-item.depth-1 {
+  margin-left: 8px;
+}
+
+.folder-tree-item.depth-2 {
+  margin-left: 16px;
+}
+
+.folder-tree-item.depth-3 {
+  margin-left: 24px;
+}
+
+.folder-tree-item.depth-4 {
+  margin-left: 32px;
+}
+
+/* Additional visual hierarchy for deeply nested folders */
+.folder-tree-item .folder-name {
+  font-size: 12px;
+}
+
+.folder-tree-item.depth-0 .folder-name {
+  font-weight: 600;
+}
+
+.folder-tree-item.depth-1 .folder-name {
+  font-weight: 500;
+}
+
+.folder-tree-item.depth-2 .folder-name {
+  font-weight: 400;
+}
+
+.folder-tree-item.depth-3 .folder-name,
+.folder-tree-item.depth-4 .folder-name {
+  font-weight: 400;
+  color: #6c757d;
+}

@@ -1,0 +1,256 @@
+/* Project header row for folder icon */
+.docai-project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.docai-project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3a4b;
+}
+.docai-folder-add-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.docai-folder-add-btn:hover {
+  background: #357ae8;
+}
+/* Folders label row for compact add icon */
+.docai-folders-label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.docai-folders-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3a4b;
+}
+.docai-section {
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  min-width: 220px;
+}
+.docai-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.folder-add-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.folder-add-btn:hover {
+  background: #357ae8;
+}
+.docai-folders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.docai-folder {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  position: relative;
+}
+.docai-folder-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.docai-folder-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3a4b;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
+}
+.docai-folder-upload, .docai-folder-menu {
+  background: none;
+  border: none;
+  padding: 0.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #4f8cff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.docai-folder-upload:hover, .docai-folder-menu:hover {
+  background: #e0f2fe;
+}
+.docai-files {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.docai-file {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.4rem;
+  background: #f6f8fa;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  position: relative;
+}
+.docai-file-name {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  color: #374151;
+  font-size: 0.88rem;
+}
+.docai-file-menu {
+  background: none;
+  border: none;
+  padding: 0.15rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #4f8cff;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.docai-file-menu:hover {
+  background: #e0f2fe;
+}
+.docai-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+  min-width: 100px;
+  padding: 0.25rem 0;
+}
+.docai-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: #374151;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.docai-dropdown-item.delete {
+  color: #dc2626;
+}
+.docai-dropdown-item:hover {
+  background: #f3f4f6;
+}
+.docai-create-folder-dialog {
+  position: absolute;
+  top: 36px;
+  left: 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 0.35rem 0.6rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 120px;
+  max-width: 180px;
+}
+.docai-folder-input {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  width: 100px;
+}
+.docai-create-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.docai-create-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+.docai-create-btn:hover:not(:disabled) {
+  background: #357ae8;
+}
+.docai-create-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  border-radius: 4px;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.docai-upload-dialog {
+  position: absolute;
+  top: 38px;
+  left: 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  padding: 0.6rem 0.8rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.docai-upload-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  border-radius: 4px;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}

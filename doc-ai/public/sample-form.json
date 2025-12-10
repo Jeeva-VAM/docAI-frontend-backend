@@ -1,0 +1,116 @@
+{
+  "pages": [
+    {
+      "page_number": 1,
+      "fields": [
+        {
+          "label": "First Name",
+          "text_content": "John",
+          "confidence": 0.95,
+          "bbox": [100, 200, 300, 230],
+          "type": "text_field"
+        },
+        {
+          "label": "Last Name", 
+          "text_content": "Doe",
+          "confidence": 0.92,
+          "bbox": [100, 250, 300, 280],
+          "type": "text_field"
+        },
+        {
+          "label": "Email Address",
+          "text_content": "john.doe@example.com",
+          "confidence": 0.98,
+          "bbox": [100, 300, 400, 330],
+          "type": "email_field"
+        },
+        {
+          "label": "Phone Number",
+          "text_content": "+1-555-0123",
+          "confidence": 0.85,
+          "bbox": [100, 350, 300, 380],
+          "type": "phone_field"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "fields": [
+        {
+          "label": "Street Address",
+          "text_content": "123 Main St",
+          "confidence": 0.90,
+          "bbox": [100, 200, 350, 230],
+          "type": "address_field"
+        },
+        {
+          "label": "City",
+          "text_content": "New York",
+          "confidence": 0.94,
+          "bbox": [100, 250, 250, 280],
+          "type": "text_field"
+        },
+        {
+          "label": "State",
+          "text_content": "NY", 
+          "confidence": 0.97,
+          "bbox": [300, 250, 350, 280],
+          "type": "text_field"
+        },
+        {
+          "label": "ZIP Code",
+          "text_content": "10001",
+          "confidence": 0.99,
+          "bbox": [400, 250, 500, 280],
+          "type": "number_field"
+        }
+      ]
+    },
+    {
+      "page_number": 3,
+      "fields": [
+        {
+          "label": "Company Information",
+          "text_content": "",
+          "confidence": 0.0,
+          "type": "section_header",
+          "fields": [
+            {
+              "label": "Company Name",
+              "text_content": "Acme Corp",
+              "confidence": 0.88,
+              "bbox": [100, 200, 300, 230],
+              "type": "text_field"
+            },
+            {
+              "label": "Job Title",
+              "text_content": "Software Engineer",
+              "confidence": 0.91,
+              "bbox": [100, 250, 350, 280],
+              "type": "text_field"
+            },
+            {
+              "label": "Annual Salary",
+              "text_content": "75000",
+              "confidence": 0.86,
+              "bbox": [100, 300, 250, 330],
+              "type": "number_field"
+            }
+          ]
+        },
+        {
+          "label": "Start Date",
+          "text_content": "2024-01-15",
+          "confidence": 0.93,
+          "bbox": [100, 400, 300, 430],
+          "type": "date_field"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "total_pages": 3,
+    "extraction_date": "2024-01-20",
+    "document_type": "employment_form"
+  }
+}

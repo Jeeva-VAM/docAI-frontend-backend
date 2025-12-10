@@ -1,0 +1,566 @@
+.json-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.json-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-white);
+  min-height: 48px;
+  flex-shrink: 0;
+}
+
+.json-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.json-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.toggle-button:hover {
+  border-color: var(--primary-sea-blue);
+  background: var(--bg-primary);
+}
+
+.toggle-button.active {
+  background: var(--primary-sea-blue);
+  color: white;
+  border-color: var(--primary-sea-blue-dark);
+}
+
+/* Compact JSON Toolbar */
+.json-compact-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0.75rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.json-compact-toolbar .toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.json-compact-toolbar .toolbar-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.compact-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.compact-toggle:hover:not(.active) {
+  border-color: var(--primary-light-green);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.compact-toggle.active {
+  background: var(--primary-light-green);
+  border-color: var(--primary-light-green-dark);
+  color: #000000; /* Black text for better readability when active */
+  font-weight: 600; /* Slightly bolder for better visibility */
+}
+
+.json-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 0.75rem;
+  min-height: 0;
+  position: relative;
+}
+
+.json-tree {
+  height: 100%;
+  overflow: auto;
+  /* Cross-browser compatible min-width with proper cascade */
+  min-width: -webkit-fill-available; /* Samsung Internet 5.0+, Safari, Chrome */
+  min-width: -moz-available; /* Firefox */
+  min-width: 200px; /* Safe fallback for all browsers */
+}
+
+.form-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-indicator {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+  font-weight: 500;
+  padding: 2px 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  align-self: flex-start;
+  border-left: 3px solid #d1d5db;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 28px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #4B5563;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  min-width: 80px;
+  max-width: 120px;
+  text-decoration: none !important;
+  cursor: default;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-label:hover {
+  color: #059669;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transform: translateX(2px);
+}
+
+.form-label[style*="pointer"]:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #059669;
+  transition: width 0.2s ease;
+}
+
+.form-label[style*="pointer"]:hover:after {
+  width: calc(100% - 8px);
+}
+
+.form-input {
+  flex: 1;
+  height: 24px;
+  padding: 0 0.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  color: #111827;
+  font-family: inherit;
+  font-size: 0.75rem;
+  min-width: 100px;
+  max-width: 100%;
+}
+
+.form-confidence {
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.nested-field {
+  border-left: 2px solid #e5e7eb;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+}
+
+.nested-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-left: 1rem;
+}
+
+.empty-state,
+.error-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.error-state {
+  color: #dc2626;
+}
+
+.empty-state p,
+.error-state p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.delete-annotation-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 2px;
+  margin-left: 4px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.delete-annotation-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  transform: scale(1.1);
+}
+
+.delete-annotation-btn:active {
+  transform: scale(0.95);
+}
+
+/* Additional utility classes to replace inline styles */
+.filter-button {
+  margin-top: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.filter-button:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.empty-state-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.filter-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.filter-input {
+  width: 48px;
+  padding: 2px 4px;
+  font-size: 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 2px;
+}
+
+.filter-separator {
+  font-size: 11px;
+}
+
+.form-label-clickable {
+  cursor: pointer;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  min-width: 80px;
+  max-width: 120px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-label-non-clickable {
+  cursor: default;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  min-width: 80px;
+  max-width: 120px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-confidence-high {
+  color: #34d399;
+}
+
+.form-confidence-medium {
+  color: #fbbf24;
+}
+
+.form-confidence-low {
+  color: #f87171;
+}
+
+.form-confidence-default {
+  color: #6b7280;
+}
+
+.compact-button-style {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.error-reload-button {
+  padding: 8px 16px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.error-reload-button:hover {
+  background: #b91c1c;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .json-viewer {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  .json-header {
+    padding: 0.75rem 1rem;
+    min-height: 56px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .json-header h3 {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  
+  .json-view-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .toggle-button {
+    flex: 1;
+    justify-content: center;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* Touch target minimum */
+  }
+  
+  .json-compact-toolbar {
+    padding: 0.5rem 1rem;
+    min-height: 44px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .json-compact-toolbar .toolbar-section {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .compact-toggle {
+    padding: 0.5rem 0.75rem;
+    min-height: 44px;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+  
+  .json-content {
+    padding: 1rem;
+  }
+  
+  .form-view {
+    gap: 0.75rem;
+  }
+  
+  .form-field {
+    padding: 0.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background: var(--bg-white);
+  }
+  
+  .field-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    min-height: auto;
+  }
+  
+  .form-label {
+    min-width: auto;
+    max-width: none;
+    font-size: 0.85rem;
+    text-align: left;
+    white-space: normal;
+  }
+  
+  .form-input {
+    height: 44px; /* Touch-friendly height */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    min-width: auto;
+  }
+  
+  .form-confidence {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .nested-field {
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+  }
+  
+  .nested-fields {
+    margin-left: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .delete-annotation-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem;
+    font-size: 14px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.1);
+  }
+  
+  .filter-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  
+  .filter-input {
+    width: 80px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  
+  .empty-state,
+  .error-state {
+    height: 150px;
+    padding: 1rem;
+  }
+  
+  .empty-state p,
+  .error-state p {
+    font-size: 1.1rem;
+  }
+  
+  .error-reload-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-height: 44px;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "InsurancePolicy": {
+    "PolicyInformation": {
+      "Date / Tarikh": {},
+      "Statement Period / Tempoh Penyata": {},
+      "Certificate No. / No Sijil": {},
+      "Certificate Start Date / Tarikh Sijil Bermula": {},
+      "Currency / Matawang": {},
+      "Person Covered": {},
+      "Address": {},
+
+      "Contribution Method / Cara Caruman": {},
+      "Contribution Frequency / Kekerapan Caruman": {},
+      "Contribution Amount / Jumlah Caruman": {},
+      "Contribution Payment Term / Tempoh Pembayaran": {},
+      "Annual Cash Payment (ACP) Option / Pilihan": {},
+
+      "Plan Code / Kod Pelan": {},
+      "Plan Name / Nama": {},
+      "Amount of Benefits / Jumlah Perlindungan": {},
+
+      "Transaction Date / Tarikh Transaksi": {},
+      "Effective Date / Tarikh Berkuasa": {},
+      "Narration / Penerangan": {},
+      "Overdue Contribution / Caruman Tertunggak (RM)": {},
+      "Amount / Jumlah (RM)": {},
+      "Total": {},
+
+      "Universal Takaful Account / Akaun Takaful Universal (UTA)": {},
+      "Transaction Date/Tarikh Transaksi": {},
+      "Effective Date/Tarikh Berkuasa": {},
+      "Narration/Penerangan": {},
+      "Total Contribution Amount/RM": {},
+      "Account Value/RM": {},
+      "Closing Balance as at / Baki Penutup pada 31/12/2024": {},
+
+      "Payment Date / Tarikh Pembayaran": {},
+      "Percentage / Peratus (%)": {},
+      "Accumulated Amount / Jumlah Terkumpul (RM)": {},
+      "Universal Tafakul Account (UTA) Value / Nilai Akaun Universal Takaful (UTA)": {},
+      "Participant's Reinvestment Account Value (PRA) / Akaun Pelaburan Semula Peserta (PRA)": {},
+      "Less / Tolak": {},
+      "Indebtedness / Keberhutangan": {},
+      "Surrender Charge / Caj Serahan": {},
+      "Net Surrender Value as at / Nilai Bersih Serahan pada": {},
+
+      "ASSIGNMENT / SERAH HAK": {},
+      "Certificate No": {}, 
+      "No Sijil": {},
+      "NOMINEE / BENEFISIARI": {},
+      "Percentage/ Peratus (%)": {}
+    },
+
+    "Schedule": {
+      "CoverageList": {
+        "children": [
+          { "Transaction Date / Tarikh Transaksi": {} },
+          { "Effective Date / Tarikh Berkuasa": {} },
+          { "Narration / Penerangan": {} },
+          { "Overdue Contribution / Caruman Tertunggak (RM)": {} },
+          { "Amount / Jumlah (RM)": {} },
+
+          { "Transaction Date/Tarikh Transaksi": {} },
+          { "Effective Date/Tarikh Berkuasa": {} },
+          { "Narration/Penerangan": {} },
+          { "Total Contribution Amount/RM": {} },
+          { "Account Value/RM": {} },
+
+          { "Closing Balance as at / Baki Penutup pada 31/12/2024": {} }
+        ]
+        
+      }
+    }
+  }
+}

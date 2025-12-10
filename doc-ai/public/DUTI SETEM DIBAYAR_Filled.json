@@ -1,0 +1,540 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "ANDA, PEMILIK POLISI YANG DINAMAKAN DALAM JADUAL A",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.932,
+          "x": 71,
+          "y": 518,
+          "width": 454,
+          "height": 10
+        },
+        {
+          "id": 1,
+          "text": "Pemilik polisi yang dinamakan dalam Jadual A",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.519,
+          "x": 71,
+          "y": 417,
+          "width": 454,
+          "height": 23
+        },
+        {
+          "id": 2,
+          "text": "Jadual Manfaat Tambahan untuk Jadual A bagi Polisi ini",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 89,
+          "y": 405,
+          "width": 436,
+          "height": 10
+        },
+        {
+          "id": 3,
+          "text": "Syarikat akan membayar jumlah asurans yang dinyatakan dalam Jadual A",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.985,
+          "x": 71,
+          "y": 367,
+          "width": 454,
+          "height": 10
+        },
+        {
+          "id": 4,
+          "text": "Tertakluk pada peruntukan dan penerimaan premium di bawah Polisi ini",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.787,
+          "x": 71,
+          "y": 341,
+          "width": 454,
+          "height": 23
+        },
+        {
+          "id": 5,
+          "text": "Syarikat ditandatangani pada tarikh keluaran",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.726,
+          "x": 71,
+          "y": 304,
+          "width": 220,
+          "height": 10
+        },
+        {
+          "id": 6,
+          "text": "Tarikh keluaran",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.541,
+          "x": 71,
+          "y": 304,
+          "width": 220,
+          "height": 10
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "JENIS PELAN",
+          "value": "PELAN DENGAN NILAI SERAHAN SEGERA YANG BERGANTUNG KEPADA NILAI PASARAN YANG MENDASARI ASET DANA UNIT TANPA PENYERTAAN DALAM KEUNTUNGAN",
+          "annotation_type": "text",
+          "confi_score": 0.779,
+          "x": 43,
+          "y": 777,
+          "width": 532,
+          "height": 9
+        },
+        {
+          "id": 1,
+          "text": "JUMLAH ASURANS",
+          "value": [
+            "ASAS",
+            "RM546,474"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.851,
+          "x": 43,
+          "y": 726,
+          "width": 86,
+          "height": 9
+        },
+        {
+          "id": 2,
+          "text": "MATA WANG",
+          "value": [
+            "RINGGIT MALAYSIA"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.907,
+          "x": 136,
+          "y": 715,
+          "width": 58,
+          "height": 9
+        },
+        {
+          "id": 3,
+          "text": "TARIKH PERMULAAN",
+          "value": [
+            "28/11/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.975,
+          "x": 482,
+          "y": 716,
+          "width": 58,
+          "height": 19
+        },
+        {
+          "id": 4,
+          "text": "PREMIUM PELABURAN ASAS",
+          "value": "RM12,000.00",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 43,
+          "y": 680,
+          "width": 128,
+          "height": 9
+        },
+        {
+          "id": 5,
+          "text": "TARIKH KELUARAN POLISI",
+          "value": [
+            "28/11/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 43,
+          "y": 636,
+          "width": 125,
+          "height": 9
+        },
+        {
+          "id": 6,
+          "text": "TARIKH PERMULAAN RISIKO",
+          "value": [
+            "28/11/2024"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 208,
+          "y": 636,
+          "width": 132,
+          "height": 9
+        },
+        {
+          "id": 7,
+          "text": "NO POLISI",
+          "value": "107847266-5",
+          "annotation_type": "text",
+          "confi_score": 0.689,
+          "x": 142,
+          "y": 515,
+          "width": 51,
+          "height": 9
+        },
+        {
+          "id": 8,
+          "text": "ALAMAT PEMILIK POLISI",
+          "value": "303 JALAN AMPANG 50450 KUALA LUMPUR",
+          "annotation_type": "text",
+          "confi_score": 0.999,
+          "x": 43,
+          "y": 411,
+          "width": 112,
+          "height": 9
+        },
+        {
+          "id": 9,
+          "text": "HAYAT YANG DIASURANSKAN",
+          "value": [
+            "MASTER CASE17 0495 LA"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.901,
+          "x": 43,
+          "y": 465,
+          "width": 137,
+          "height": 9
+        },
+        {
+          "id": 10,
+          "text": "PEMILIK POLISI",
+          "value": "MRS CASE17 0495",
+          "annotation_type": "text",
+          "confi_score": 0.698,
+          "x": 43,
+          "y": 495,
+          "width": 69,
+          "height": 9
+        },
+        {
+          "id": 11,
+          "text": "PEMILIK POLISI",
+          "value": "MASTER CASE17 0495 LA",
+          "annotation_type": "text",
+          "confi_score": 0.52,
+          "x": 43,
+          "y": 538,
+          "width": 265,
+          "height": 9
+        },
+        {
+          "id": 12,
+          "text": "JADUAL MANFAAT TAMBAHAN",
+          "value": "JADUAL MANFAAT TAMBAHAN",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 214,
+          "y": 372,
+          "width": 187,
+          "height": 12
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "NO POLISI",
+          "value": "107847266-5",
+          "annotation_type": "text",
+          "confi_score": 0.773,
+          "x": 43,
+          "y": 809,
+          "width": 98,
+          "height": 8
+        },
+        {
+          "id": 1,
+          "text": "CAJ INSURANS",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.909,
+          "x": 43,
+          "y": 774,
+          "width": 65,
+          "height": 8
+        },
+        {
+          "id": 2,
+          "text": "MANFAAT ASAS",
+          "value": [
+            "PREMIUM EKSTRA KESIHATAN @0.25 KALI KADAR STANDARD",
+            "SMART HEALTH PROTECTOR-300-2.5K",
+            "PREMIUM EKSTRA KESIHATAN @0.25 KALI KADAR STANDARD"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.786,
+          "x": 43,
+          "y": 756,
+          "width": 506,
+          "height": 8
+        },
+        {
+          "id": 3,
+          "text": "MANFAAT PILIHAN BERKAIT PELABURAN",
+          "value": [
+            "IL ACCIDENTAL DEATH AND DISMEMBERMENT BENEFITS RIDER",
+            "IL HOSPITALISATION BENEFITS RIDER",
+            "SMART MULTI CRITICAL CARE",
+            "SMART HEALTH PROTECTOR-300-2.5K",
+            "SMART HEALTH PROTECTOR PLUS-300-2.5K"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.924,
+          "x": 43,
+          "y": 364,
+          "width": 344,
+          "height": 8
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "textItems": [
+        {
+          "id": 0,
+          "text": "NO POLISI",
+          "value": "107847266-5",
+          "annotation_type": "text",
+          "confi_score": 0.772,
+          "x": 71,
+          "y": 798,
+          "width": 109,
+          "height": 9
+        },
+        {
+          "id": 1,
+          "text": "JENIS PELAN",
+          "value": "99 YEARS SMARTPROTECT JUNIOR",
+          "annotation_type": "text",
+          "confi_score": 0.695,
+          "x": 71,
+          "y": 735,
+          "width": 67,
+          "height": 9
+        },
+        {
+          "id": 2,
+          "text": "JENIS DANA YANG BOLEH DIDAPATI",
+          "value": [
+            "1. DANA LION BALANCED",
+            "2. DANA LION FIXED INCOME",
+            "3. DANA LION PROGRESSIVE",
+            "4. DANA SEJATI",
+            "5. DANA LION US-I",
+            "6. DANA LION UK-I",
+            "7. DANA LION AU-I",
+            "8. DANA LION ENHANCED EQUITY",
+            "9. DANA GEMILANG",
+            "10. DANA LION SMALL MID CAP",
+            "11. DANA LION ADVANCED STRATEGIC",
+            "12. DANA LION ASEAN",
+            "13. DANA LION EQUITY GLOBAL SUSTAINABILITY"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.855,
+          "x": 71,
+          "y": 692,
+          "width": 181,
+          "height": 9
+        },
+        {
+          "id": 3,
+          "text": "CAJ PENGURUSAN DANA",
+          "value": [
+            "0.90%",
+            "0.50%",
+            "1.35%",
+            "0.50%",
+            "0.75%",
+            "0.75%",
+            "0.75%",
+            "1.50%",
+            "1.50%",
+            "1.40%",
+            "1.35%",
+            "1.50%"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 348,
+          "y": 692,
+          "width": 122,
+          "height": 9
+        },
+        {
+          "id": 4,
+          "text": "CAJ PENGURUSAN DANA BOLEH DIUBAH OLEH SYARIKAT",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.928,
+          "x": 71,
+          "y": 508,
+          "width": 280,
+          "height": 9
+        },
+        {
+          "id": 5,
+          "text": "YURAN POLISI",
+          "value": "RM72 SETAHUN (RM6 DITOLAK SETIAP BULAN)",
+          "annotation_type": "text",
+          "confi_score": 0.909,
+          "x": 71,
+          "y": 485,
+          "width": 72,
+          "height": 9
+        },
+        {
+          "id": 6,
+          "text": "CAJ PENARIKAN BALIK SEBAHAGIAN / CAJ SERAHAN",
+          "value": [
+            "['1 hingga 12', '0%']",
+            "['13 hingga 24', '0%']",
+            "['25 dan selanjutnya', '0%']"
+          ],
+          "annotation_type": "text",
+          "confi_score": 0.857,
+          "x": 71,
+          "y": 428,
+          "width": 265,
+          "height": 9
+        },
+        {
+          "id": 7,
+          "text": "PREMIUM TAHUN PERTAMA",
+          "value": "60%",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 71,
+          "y": 302,
+          "width": 134,
+          "height": 9
+        },
+        {
+          "id": 8,
+          "text": "PREMIUM TAHUN KEDUA",
+          "value": "60%",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 71,
+          "y": 291,
+          "width": 121,
+          "height": 9
+        },
+        {
+          "id": 9,
+          "text": "PREMIUM TAHUN KETIGA",
+          "value": "60%",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 71,
+          "y": 279,
+          "width": 123,
+          "height": 9
+        },
+        {
+          "id": 10,
+          "text": "PREMIUM TAHUN KEEMPAT",
+          "value": "80%",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 71,
+          "y": 268,
+          "width": 133,
+          "height": 9
+        },
+        {
+          "id": 11,
+          "text": "PREMIUM TAHUN KELIMA",
+          "value": "80%",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 71,
+          "y": 256,
+          "width": 125,
+          "height": 9
+        },
+        {
+          "id": 12,
+          "text": "PREMIUM TAHUN KEENAM",
+          "value": "80%",
+          "annotation_type": "text",
+          "confi_score": 0.853,
+          "x": 71,
+          "y": 245,
+          "width": 129,
+          "height": 9
+        },
+        {
+          "id": 13,
+          "text": "PREMIUM TAHUN KETUJUH",
+          "value": "95%",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 71,
+          "y": 233,
+          "width": 131,
+          "height": 9
+        },
+        {
+          "id": 14,
+          "text": "PREMIUM TAHUN KELAPAN",
+          "value": "95%",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 71,
+          "y": 222,
+          "width": 133,
+          "height": 9
+        },
+        {
+          "id": 15,
+          "text": "PREMIUM TAHUN KESEMBILAN DAN TAHUN BERIKUTNYA",
+          "value": "100%",
+          "annotation_type": "text",
+          "confi_score": 0.857,
+          "x": 71,
+          "y": 210,
+          "width": 279,
+          "height": 9
+        },
+        {
+          "id": 16,
+          "text": "IMBANGAN / GREAT SAVER RIDER (JIKA ADA)",
+          "value": "95%",
+          "annotation_type": "text",
+          "confi_score": 0.856,
+          "x": 71,
+          "y": 187,
+          "width": 218,
+          "height": 9
+        },
+        {
+          "id": 17,
+          "text": "PREMIUM TIDAK TERUNTUK",
+          "value": "EMPTY",
+          "annotation_type": "text",
+          "confi_score": 0.854,
+          "x": 71,
+          "y": 119,
+          "width": 136,
+          "height": 9
+        }
+      ]
+    }
+  ]
+}

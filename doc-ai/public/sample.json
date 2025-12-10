@@ -1,0 +1,35 @@
+{
+  "documentInfo": {
+    "title": "Sample Document",
+    "author": "DocAI System",
+    "created": "2025-10-15",
+    "pages": 1,
+    "type": "demo"
+  },
+  "content": {
+    "sections": [
+      {
+        "title": "Introduction",
+        "page": 1,
+        "content": "This is a sample document for testing the DocAI React application."
+      },
+      {
+        "title": "Features",
+        "page": 1,
+        "items": [
+          "File upload with drag and drop",
+          "PDF to image conversion",
+          "JSON viewer with toggle modes",
+          "Zoom and pan functionality",
+          "Auto-scroll for presentations",
+          "File persistence in localStorage"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0",
+    "lastModified": "2025-10-15T12:30:00Z",
+    "tags": ["demo", "test", "sample"]
+  }
+}

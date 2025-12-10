@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Auto-fit Debug Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .debug-box { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .highlight { background: #e3f2fd; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .problem { background: #ffebee; padding: 15px; border-radius: 4px; border-left: 4px solid #f44336; }
+        .solution { background: #e8f5e8; padding: 15px; border-radius: 4px; border-left: 4px solid #4caf50; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>14-inch Screen PDF Auto-fit Debug</h1>
+    
+    <div class="debug-box">
+        <h2>Current Browser Dimensions</h2>
+        <div class="highlight">
+            <p><strong>Window:</strong> <span id="windowDims"></span></p>
+            <p><strong>Screen:</strong> <span id="screenDims"></span></p>
+            <p><strong>Device Pixel Ratio:</strong> <span id="dpr"></span></p>
+            <p><strong>Estimated Screen Diagonal:</strong> <span id="diagonal"></span> inches</p>
+        </div>
+    </div>
+
+    <div class="debug-box">
+        <h2>PDF Panel Analysis (50% Split)</h2>
+        <div class="highlight">
+            <p><strong>Estimated PDF Panel Width:</strong> <span id="panelWidth"></span>px</p>
+            <p><strong>Estimated PDF Content Height:</strong> <span id="contentHeight"></span>px</p>
+            <p><strong>Panel Width Ratio:</strong> <span id="panelRatio"></span>%</p>
+        </div>
+    </div>
+
+    <div class="debug-box">
+        <h2>DPI and Utilization Analysis</h2>
+        <div class="highlight">
+            <p><strong>Calculated DPI:</strong> <span id="calculatedDPI"></span></p>
+            <p><strong>Reference DPI (14" 1920x1080):</strong> 157</p>
+            <p><strong>DPI Ratio:</strong> <span id="dpiRatio"></span></p>
+            <p><strong>Selected Utilization Factor:</strong> <span id="utilizationFactor"></span>%</p>
+            <p><strong>Panel Adjustment:</strong> <span id="panelAdjustment"></span></p>
+            <p><strong>Final Utilization:</strong> <span id="finalUtilization"></span>%</p>
+        </div>
+    </div>
+
+    <div class="debug-box">
+        <h2>PDF Scale Calculations</h2>
+        <div class="highlight">
+            <h3>Standard PDF Dimensions (A4 at 150 DPI): 1240 × 1754 pixels</h3>
+            <p><strong>Available Width for PDF:</strong> <span id="availableWidth"></span>px</p>
+            <p><strong>Available Height for PDF:</strong> <span id="availableHeight"></span>px</p>
+            <p><strong>Width Scale:</strong> <span id="widthScale"></span></p>
+            <p><strong>Height Scale:</strong> <span id="heightScale"></span></p>
+            <p><strong>Limiting Factor:</strong> <span id="limitingFactor"></span></p>
+            <p><strong>Final Scale:</strong> <span id="finalScale"></span></p>
+            <p><strong>Resulting Zoom:</strong> <span id="resultingZoom"></span>%</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>🔍 Problem Analysis</h2>
+        <div id="problemAnalysis"></div>
+    </div>
+
+    <div class="solution">
+        <h2>💡 Recommended Solution</h2>
+        <div id="recommendedSolution"></div>
+    </div>
+
+    <div class="debug-box">
+        <h2>Test Different Utilization Factors</h2>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div>
+                <h4>87% Utilization</h4>
+                <p>Scale: <span id="scale87"></span></p>
+                <p>Zoom: <span id="zoom87"></span>%</p>
+            </div>
+            <div>
+                <h4>89% Utilization (Your Perfect)</h4>
+                <p>Scale: <span id="scale89"></span></p>
+                <p>Zoom: <span id="zoom89"></span>%</p>
+            </div>
+            <div>
+                <h4>91% Utilization</h4>
+                <p>Scale: <span id="scale91"></span></p>
+                <p>Zoom: <span id="zoom91"></span>%</p>
+            </div>
+            <div>
+                <h4>95% Utilization</h4>
+                <p>Scale: <span id="scale95"></span></p>
+                <p>Zoom: <span id="zoom95"></span>%</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get actual dimensions
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const screenWidth = screen.width;
+        const screenHeight = screen.height;
+        const dpr = window.devicePixelRatio;
+
+        // Calculate diagonal
+        const diagonal = Math.sqrt(screenWidth * screenWidth + screenHeight * screenHeight) / (dpr * 96) * 25.4 / 25.4;
+        
+        // Estimate panel dimensions
+        const panelWidth = Math.floor(windowWidth * 0.5);
+        const headerHeight = 48;
+        const contentHeight = windowHeight - headerHeight - 40;
+        const panelRatio = (panelWidth / windowWidth) * 100;
+
+        // Calculate DPI and utilization
+        const calculatedDPI = Math.sqrt(screenWidth * screenWidth + (screenWidth * 9/16) * (screenWidth * 9/16)) / 14;
+        const referenceDPI = 157;
+        const dpiRatio = calculatedDPI / referenceDPI;
+
+        // Determine utilization factor using current logic
+        let utilizationFactor = 0.89;
+        if (calculatedDPI > referenceDPI * 1.5) {
+            utilizationFactor = 0.91;
+        } else if (calculatedDPI < referenceDPI * 0.8) {
+            utilizationFactor = 0.87;
+        }
+
+        // Panel adjustments
+        let panelAdjustment = 1.0;
+        if (panelRatio < 40) {
+            panelAdjustment = 0.95;
+        } else if (panelRatio > 60) {
+            panelAdjustment = 1.02;
+        }
+
+        const finalUtilization = utilizationFactor * panelAdjustment;
+
+        // PDF calculations
+        const pdfWidth = 1240;
+        const pdfHeight = 1754;
+        const availableWidth = panelWidth * finalUtilization;
+        const availableHeight = contentHeight * finalUtilization;
+        const widthScale = availableWidth / pdfWidth;
+        const heightScale = availableHeight / pdfHeight;
+        const finalScale = Math.min(widthScale, heightScale);
+        const limitingFactor = widthScale < heightScale ? 'Width' : 'Height';
+
+        // Update display
+        document.getElementById('windowDims').textContent = `${windowWidth} × ${windowHeight}`;
+        document.getElementById('screenDims').textContent = `${screenWidth} × ${screenHeight}`;
+        document.getElementById('dpr').textContent = dpr;
+        document.getElementById('diagonal').textContent = diagonal.toFixed(1);
+        document.getElementById('panelWidth').textContent = panelWidth;
+        document.getElementById('contentHeight').textContent = contentHeight;
+        document.getElementById('panelRatio').textContent = panelRatio.toFixed(1);
+        document.getElementById('calculatedDPI').textContent = calculatedDPI.toFixed(1);
+        document.getElementById('dpiRatio').textContent = dpiRatio.toFixed(2);
+        document.getElementById('utilizationFactor').textContent = (utilizationFactor * 100).toFixed(1);
+        document.getElementById('panelAdjustment').textContent = `×${panelAdjustment.toFixed(2)}`;
+        document.getElementById('finalUtilization').textContent = (finalUtilization * 100).toFixed(1);
+        document.getElementById('availableWidth').textContent = availableWidth.toFixed(0);
+        document.getElementById('availableHeight').textContent = availableHeight.toFixed(0);
+        document.getElementById('widthScale').textContent = widthScale.toFixed(4);
+        document.getElementById('heightScale').textContent = heightScale.toFixed(4);
+        document.getElementById('limitingFactor').textContent = limitingFactor;
+        document.getElementById('finalScale').textContent = finalScale.toFixed(4);
+        document.getElementById('resultingZoom').textContent = (finalScale * 100).toFixed(0);
+
+        // Test different utilization factors
+        [87, 89, 91, 95].forEach(util => {
+            const testUtilization = util / 100;
+            const testAvailableWidth = panelWidth * testUtilization;
+            const testAvailableHeight = contentHeight * testUtilization;
+            const testWidthScale = testAvailableWidth / pdfWidth;
+            const testHeightScale = testAvailableHeight / pdfHeight;
+            const testFinalScale = Math.min(testWidthScale, testHeightScale);
+            
+            document.getElementById(`scale${util}`).textContent = testFinalScale.toFixed(4);
+            document.getElementById(`zoom${util}`).textContent = (testFinalScale * 100).toFixed(0);
+        });
+
+        // Problem analysis
+        const problemAnalysis = document.getElementById('problemAnalysis');
+        if (finalScale < 0.4) {
+            problemAnalysis.innerHTML = `
+                <h3>🚨 CRITICAL ISSUE FOUND:</h3>
+                <p><strong>Your scale is ${(finalScale * 100).toFixed(0)}% which is way too small!</strong></p>
+                <ul>
+                    <li><strong>Panel Width:</strong> ${panelWidth}px (${panelRatio.toFixed(1)}% of window)</li>
+                    <li><strong>Content Height:</strong> ${contentHeight}px</li>
+                    <li><strong>PDF Dimensions:</strong> ${pdfWidth} × ${pdfHeight}px</li>
+                    <li><strong>Available Space:</strong> ${availableWidth.toFixed(0)} × ${availableHeight.toFixed(0)}px</li>
+                    <li><strong>Limiting Factor:</strong> ${limitingFactor}</li>
+                </ul>
+                <p><strong>The issue is:</strong> ${limitingFactor === 'Height' ? 'Content height is too small for the PDF' : 'Panel width is too narrow for the PDF'}</p>
+            `;
+        } else {
+            problemAnalysis.innerHTML = `
+                <p>Scale seems reasonable at ${(finalScale * 100).toFixed(0)}%. Let me analyze further...</p>
+            `;
+        }
+
+        // Solution
+        const recommendedSolution = document.getElementById('recommendedSolution');
+        if (limitingFactor === 'Height') {
+            const neededUtilization = (pdfHeight * 0.89) / contentHeight;
+            recommendedSolution.innerHTML = `
+                <h3>HEIGHT is the limiting factor</h3>
+                <p>To achieve 89% zoom, you need:</p>
+                <ul>
+                    <li><strong>Current content height:</strong> ${contentHeight}px</li>
+                    <li><strong>PDF height:</strong> ${pdfHeight}px</li>
+                    <li><strong>Height utilization needed:</strong> ${(neededUtilization * 100).toFixed(1)}%</li>
+                    <li><strong>Recommended fix:</strong> Use height-based utilization of ${Math.min(95, neededUtilization * 100).toFixed(1)}%</li>
+                </ul>
+            `;
+        } else {
+            const neededUtilization = (pdfWidth * 0.89) / panelWidth;
+            recommendedSolution.innerHTML = `
+                <h3>WIDTH is the limiting factor</h3>
+                <p>To achieve 89% zoom, you need:</p>
+                <ul>
+                    <li><strong>Current panel width:</strong> ${panelWidth}px</li>
+                    <li><strong>PDF width:</strong> ${pdfWidth}px</li>
+                    <li><strong>Width utilization needed:</strong> ${(neededUtilization * 100).toFixed(1)}%</li>
+                    <li><strong>Recommended fix:</strong> Use width-based utilization of ${Math.min(95, neededUtilization * 100).toFixed(1)}%</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>

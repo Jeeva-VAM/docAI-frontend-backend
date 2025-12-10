@@ -1,0 +1,52 @@
+{
+  "InsurancePolicy": {
+    "PolicyInformation": {
+      "Date / Tarikh": {},
+      "Statement Period / Tempoh Penyata": {},
+      "Certificate No. / No Sijil": {},
+   
+      "Contribution Method / Cara Caruman": {},
+      "Contribution Frequency / Kekerapan Caruman": {},
+      "Contribution Amount / Jumlah Caruman": {},
+      "Contribution Payment Term / Tempoh Pembayaran": {},
+      "Annual Cash Payment (ACP) Option / Pilihan": {},
+      "Plan Code / Kod Pelan": {},
+      "Plan Name / Naaam": {},
+      "Amounttt of Benefits / Jumlah Perlindungan": {},
+      "Payment Date / Tarikh Pembayaran": {},
+      "Percentage / Peratus (%)": {},
+      "Accumulated Amount / Jumlah Terkumpul (RM)": {},
+      "Universal Takaful Account (UTA)": {},
+      "Participant's Reinvestment Account Value (PRA)": {},
+      "high / Tolak": {},
+      "Indebtedness / Keberhutangan": {},
+      "Surrender Charge / Caj Serahan": {},
+      "Net Surrender Value as at / Nilai Bersih Serahan pada": {},
+      "Assignment / Serah Hak": {},
+      "Certificate No": {},
+      "No Sijil": {},
+      "Nominee / Benefisiari": {}
+    },
+
+    "Schedule": {
+      "CoverageList": {
+        "children": [
+          { "Transaction Date / Tarikh Transaksi": {} },
+          { "Effective Date / Tarikh Berkuasa": {} },
+          { "Narration / Penerangan": {} },
+          { "Overdue Contribution / Caruman Tertunggak (RM)": {} },
+          { "Amount / Jumlah (RM)": {} },
+
+          { "Transaction Date/Tarikh Transaksi": {} },
+          { "Effective Date/Tarikh Berkuasa": {} },
+          { "Narration/Penerangan": {} },
+          { "Total Contribution Amount/RM": {} },
+          { "Account Value/RM": {} },
+
+          { "Closing Balance as at / Baki Penutup pada": {} }
+        ]
+      }
+    }
+  }
+}
+ 

@@ -1,0 +1,33 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        { "id": 0, "text": "POLICY NUMBER:", "x": 50, "y": 781, "width": 75, "height": 9, "fontName": "g_d6_f1", "fontSize": 9, "value": "20250067893", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 1, "text": "Premises Number", "x": 53, "y": 629, "width": 80, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "101", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 2, "text": "Building Number", "x": 295, "y": 629, "width": 76, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "A", "annotation_type": "llm", "confi_score": 0.80 },
+        { "id": 3, "text": "Description of Coverage", "x": 53, "y": 617, "width": 109, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "Fire", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 4, "text": "Revised Amount of Insurance:", "x": 53, "y": 572, "width": 136, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$500000", "annotation_type": "llm", "confi_score": 0.82 },
+        { "id": 5, "text": "Additional Premium:", "x": 308, "y": 572, "width": 92, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$2500", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 6, "text": "Premises Number", "x": 53, "y": 559, "width": 80, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "102", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 7, "text": "Building Number", "x": 295, "y": 559, "width": 76, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "B", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 8, "text": "Description of Coverage", "x": 53, "y": 547, "width": 109, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "Theft", "annotation_type": "llm", "confi_score": 0.78 },
+        { "id": 9, "text": "Revised Amount of Insurance:", "x": 53, "y": 501, "width": 136, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$200000", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 10, "text": "Additional Premium:", "x": 308, "y": 501, "width": 92, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$1200", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 11, "text": "Premises Number", "x": 53, "y": 489, "width": 80, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "103", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 12, "text": "Building Number", "x": 295, "y": 489, "width": 76, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "C", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 13, "text": "Description of Coverage", "x": 53, "y": 477, "width": 109, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "Flood", "annotation_type": "llm", "confi_score": 0.80 },
+        { "id": 14, "text": "Revised Amount of Insurance:", "x": 53, "y": 431, "width": 136, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$300000", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 15, "text": "Additional Premium:", "x": 308, "y": 431, "width": 92, "height": 9, "fontName": "g_d6_f2", "fontSize": 9, "value": "$1800", "annotation_type": "llm", "confi_score": 0.75 }
+      ]
+    }
+  ],
+  "summary": {
+    "total_fields": 16,
+    "total_tables": 1,
+    "high_confidence_fields": 0,
+    "average_confidence": 0.75,
+    "detection_quality": "good",
+    "processing_method": "hybrid_detection"
+  }
+}

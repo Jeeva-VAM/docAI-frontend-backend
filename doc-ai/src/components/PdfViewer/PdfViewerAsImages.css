@@ -1,0 +1,37 @@
+.pdf-image-viewer {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.pdf-image-viewer img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.pdf-page-container {
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  background: white;
+}
+
+.pdf-page-label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #666;
+  font-weight: 500;
+}
+
+.pdf-pages-header {
+  padding: 10px;
+  background: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #333;
+}

@@ -1,0 +1,39 @@
+{
+  "document_structure": {
+    "header_section": {
+      "insured_info": {
+        "Named Insured": {},
+        "Producer Name": {},
+        "Address Details": {},
+        "E-Mail ID": {}
+      }
+    },
+    "policy_details": {
+      "policy_info": {
+        "Account Number": {},
+        "Policy Term Period": {},
+        "Quote Date": {},
+        "Transaction Type": {}
+      }
+    },
+    "financial_section": {
+      "premium_info": {
+        "Total Policy Premium": {},
+        "Premium Subtotal": {},
+        "Carrier Fee": {},
+        "Broker Fee": {},
+        "Total Cost": {}
+      },
+      "additional_charges": {
+        "NY Stamping Fee": {},
+        "NY SL Tax": {}
+      }
+    },
+    "operations": {
+      "work_details": {
+        "Covered Work": {},
+        "Commission Rate": {}
+      }
+    }
+  }
+}

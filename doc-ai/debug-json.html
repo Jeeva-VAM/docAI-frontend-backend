@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Test</title>
+</head>
+<body>
+    <h1>JSON File Test</h1>
+    <input type="file" id="fileInput" accept=".json">
+    <div id="output"></div>
+    
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const jsonData = JSON.parse(event.target.result);
+                        document.getElementById('output').innerHTML = '<pre>' + JSON.stringify(jsonData, null, 2) + '</pre>';
+                        console.log('JSON loaded successfully:', jsonData);
+                    } catch (error) {
+                        document.getElementById('output').innerHTML = 'Error: ' + error.message;
+                        console.error('JSON parse error:', error);
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+    </script>
+</body>
+</html>

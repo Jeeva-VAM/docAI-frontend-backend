@@ -1,0 +1,41 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "textItems": [
+        { "id": 0, "text": "Writing Company:", "x": 37.07202026221693, "y": 497.3036648250461, "width": 84.22187127532777, "height": 16.192955801104972, "fontName": "g_d6_f2", "fontSize": 9, "value": "InsureMax General Insurance Co.", "annotation_type": "llm", "confi_score": 0.80 },
+        { "id": 1, "text": "Commission:", "x": 38.15178784266985, "y": 482.909926335175, "width": 59.74713945172826, "height": 10.07561694290979, "fontName": "g_d6_f2", "fontSize": 9, "value": "12", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 2, "text": "Account Number:", "x": 38.15178784266985, "y": 464.91775322283615, "width": 78.46311084624554, "height": 10.075616942909733, "fontName": "g_d6_f2", "fontSize": 9, "value": "Acc-458921", "annotation_type": "llm", "confi_score": 0.80 },
+        { "id": 3, "text": "Policy Term:", "x": 68.38528009535162, "y": 446.92558011049726, "width": 27.35411203814064, "height": 10.07561694290979, "fontName": "g_d6_f2", "fontSize": 9, "value": "01-Nov-2024 to 31-Oct-2025", "annotation_type": "llm", "confi_score": 0.78 },
+        { "id": 4, "text": "Transaction Type:", "x": 37.791865315852206, "y": 424.9751289134439, "width": 82.78218116805722, "height": 13.67405156537751, "fontName": "g_d6_f2", "fontSize": 9, "value": "New Business", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 5, "text": "Covered Work or Operations:", "x": 37.43194278903457, "y": 391.14984346224685, "width": 133.53125744934448, "height": 14.393738489871055, "fontName": "g_d6_f2", "fontSize": 9, "value": "Private car comprehensive insurance personal and family use", "annotation_type": "llm", "confi_score": 0.80 },
+        { "id": 6, "text": "Total Coverages Premium:", "x": 144.32893325387369, "y": 275.64009208103136, "width": 128.13241954707985, "height": 14.03389502762434, "fontName": "g_d6_f2", "fontSize": 9, "value": 45000, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 7, "text": "Total Surcharge Premium:", "x": 144.32893325387369, "y": 256.9282320441989, "width": 123.81334922526815, "height": 14.393738489871112, "fontName": "g_d6_f2", "fontSize": 9, "value": 2000, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 8, "text": "Premium Subtotal:", "x": 143.96901072705603, "y": 238.9360589318601, "width": 92.5000893921335, "height": 13.674051565377567, "fontName": "g_d6_f2", "fontSize": 9, "value": 47000, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 9, "text": "*Total Policy Premium:", "x": 144.32893325387369, "y": 222.38325966850834, "width": 107.25691299165675, "height": 14.753581952117884, "fontName": "g_d6_f2", "fontSize": 9, "value": 47000, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 10, "text": "Carrier Fee:", "x": 144.6888557806913, "y": 155.45237569060782, "width": 54.70822407628128, "height": 11.514990791896821, "fontName": "g_d6_f2", "fontSize": 9, "value": "$12.0", "annotation_type": "llm", "confi_score": 0.82 },
+        { "id": 11, "text": "Broker Fee:", "x": 144.6888557806913, "y": 137.46020257826888, "width": 53.98837902264603, "height": 10.075616942909846, "fontName": "g_d6_f2", "fontSize": 9, "value": "$850", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 12, "text": "NY Stamping Fee:", "x": 145.04877830750897, "y": 116.58928176795587, "width": 81.34249106078664, "height": 14.393738489871112, "fontName": "g_d6_f2", "fontSize": 9, "value": "$140.0", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 13, "text": "NY SL Tax:", "x": 145.4087008343266, "y": 101.47585635359121, "width": 52.548688915375465, "height": 10.795303867403277, "fontName": "g_d6_f2", "fontSize": 9, "value": 5260, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 14, "text": "Total Cost Incl TRIA:", "x": 145.4087008343266, "y": 83.48368324125238, "width": 95.01954707985698, "height": 11.514990791896821, "fontName": "g_d6_f2", "fontSize": 9, "value": 553.5, "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 15, "text": "Named Insured:", "x": 42.47085816448153, "y": 623.2488766114182, "width": 77.02342073897498, "height": 10.795303867403277, "fontName": "g_d6_f2", "fontSize": 9, "value": "Priya Ramesh", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 16, "text": "Producer:", "x": 362.8019070321812, "y": 623.9685635359117, "width": 48.22961859356377, "height": 10.075616942909733, "fontName": "g_d6_f2", "fontSize": 9, "value": "SecureSure Insurance Brokers Pvt. Ltd.", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 17, "text": "Address:", "x": 41.75101311084625, "y": 585.4653130755065, "width": 46.43000595947557, "height": 14.033895027624226, "fontName": "g_d6_f2", "fontSize": 9, "value": "23, Green Park Avenue, Chennai, Tamil Nadu, 600042", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 18, "text": "Producer Contact:", "x": 362.08206197854594, "y": 586.5448434622468, "width": 90.34055423122766, "height": 13.314208103130682, "fontName": "g_d6_f2", "fontSize": 9, "value": "+91-9876504321", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 19, "text": "E-mail:", "x": 362.8019070321812, "y": 568.9125138121548, "width": 35.27240762812875, "height": 9.355930018416188, "fontName": "g_d6_f2", "fontSize": 9, "value": "deepak sharma@securesure.in", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 20, "text": "Quote Date:", "x": 38.15178784266985, "y": 410.94123388581954, "width": 55.42806912991658, "height": 10.795303867403334, "fontName": "g_d6_f2", "fontSize": 9, "value": "2024-10-15", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 21, "text": "City, State, Zip:", "x": 41.03116805721097, "y": 564.9542357274402, "width": 77.38334326579263, "height": 14.753581952117884, "fontName": "g_d6_f2", "fontSize": 9, "value": "Chennai, Tamil Nadu, 600042", "annotation_type": "llm", "confi_score": 0.75 },
+        { "id": 22, "text": "Total Premium Incl TRIA:", "x": 144.32893325387369, "y": 172.00517495395957, "width": 116.25497616209776, "height": 11.874834254143593, "fontName": "g_d6_f2", "fontSize": 9, "value": 553.5, "annotation_type": "llm", "confi_score": 0.75 }
+      ]
+    }
+  ],
+  "summary": {
+    "total_fields": 23,
+    "total_tables": 0,
+    "high_confidence_fields": 0,
+    "average_confidence": 0.75,
+    "detection_quality": "good",
+    "processing_method": "hybrid_detection"
+  }
+}
+ 
