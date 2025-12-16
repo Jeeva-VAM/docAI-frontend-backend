@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Upload, X, FileText, File, MoreVertical, FolderPlus, Plus, Minus, Folder } from 'lucide-react';
+import { Upload, X, FileText, File, MoreVertical, FolderPlus, Plus, Minus, Folder, Clock, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { 
   extractFilesFromFolder, 
   validateFolderContents, 
@@ -108,6 +108,22 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
       return <FileText className="file-icon pdf" />;
     }
     return <File className="file-icon" />;
+  };
+
+  // Processing status icon helper
+  const getProcessingStatusIcon = (status?: string) => {
+    switch (status) {
+      case 'pending':
+        return <div title="Processing Pending"><Clock size={12} className="status-icon pending" /></div>;
+      case 'processing':
+        return <div title="Processing..."><Loader2 size={12} className="status-icon processing spin" /></div>;
+      case 'completed':
+        return <div title="Processing Completed"><CheckCircle size={12} className="status-icon completed" /></div>;
+      case 'failed':
+        return <div title="Processing Failed"><AlertCircle size={12} className="status-icon failed" /></div>;
+      default:
+        return null;
+    }
   };
 
   const [showDropZone, setShowDropZone] = useState(false);
@@ -245,6 +261,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
                 <span className="folder-file-size" style={{ marginLeft: '4px', fontSize: '0.8em', color: '#666' }}>
                   ({Math.round(folderFile.size / 1024)}KB)
                 </span>
+                {getProcessingStatusIcon(folderFile.processingStatus)}
                 <button
                   className="folder-file-actions"
                   title="File actions"
@@ -333,11 +350,15 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
 
       console.log('📤 Files to upload:', Array.from(fileList).map(f => ({ name: f.name, size: f.size, type: f.type })));
 
+      // Generate batch_id for this upload action
+      const batchId = crypto.randomUUID();
+      console.log('📦 Generated batch_id for folder upload:', batchId);
+
       // Upload each file to the folder via API
       const uploadPromises = Array.from(fileList).map(async (file) => {
         try {
-          console.log('📤 Starting upload for file:', file.name, 'to folder:', folderId);
-          const response = await FileApiService.uploadFileToFolder(folderId, file);
+          console.log('📤 Starting upload for file:', file.name, 'to folder:', folderId, 'with batch_id:', batchId);
+          const response = await FileApiService.uploadFileToFolder(folderId, file, batchId);
           console.log('✅ File uploaded successfully:', { fileName: file.name, response });
           return response;
         } catch (error) {
@@ -698,6 +719,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
                     {file.name.replace(/^[a-f0-9-]+_/, '')}
                   </div>
                 </div>
+                {getProcessingStatusIcon(file.processingStatus)}
               </div>
               
               <div className="file-actions">

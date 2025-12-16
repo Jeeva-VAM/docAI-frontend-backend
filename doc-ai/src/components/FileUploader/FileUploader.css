@@ -487,6 +487,32 @@
   color: #f59e0b;
 }
 
+/* Processing status icons */
+.status-icon.pending {
+  color: #6b7280;
+}
+
+.status-icon.processing {
+  color: #3b82f6;
+}
+
+.status-icon.processing.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.status-icon.completed {
+  color: #10b981;
+}
+
+.status-icon.failed {
+  color: #ef4444;
+}
+
 .remove-button {
   background: none;
   border: none;

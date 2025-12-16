@@ -4,7 +4,7 @@
  */
 
 import { ApiService } from './apiService';
-import type { FileData, StoredFileData } from '../types';
+import type { FileData, StoredFileData, FileExtraction } from '../types';
 
 export interface FileResponse {
   id: string;
@@ -69,15 +69,25 @@ class FileApiServiceClass {
    * Upload file to project root
    * POST /api/projects/{projectId}/files
    */
-  async uploadFileToProject(projectId: string, file: File): Promise<FileResponse> {
+  async uploadFileToProject(projectId: string, file: File, batchId?: string, importBatchId?: string): Promise<FileResponse> {
     try {
       const formData = new FormData();
       formData.append('file', file);
       
+      // ALWAYS add batch_id if provided
+      if (batchId) {
+        formData.append('batch_id', batchId);
+      }
+      
+      // Add import_batch_id if provided (for folder uploads)
+      if (importBatchId) {
+        formData.append('import_batch_id', importBatchId);
+      }
+      
       // Add relativePath if available (for folder uploads with subfolders)
       const relativePath = 'webkitRelativePath' in file ? (file as File & { webkitRelativePath: string }).webkitRelativePath : '';
       if (relativePath) {
-        formData.append('relativePath', relativePath);
+        formData.append('relative_path', relativePath);
         console.log(`📁 Including relativePath: ${relativePath}`);
       }
 
@@ -85,7 +95,9 @@ class FileApiServiceClass {
         name: file.name,
         size: file.size,
         type: file.type,
-        relativePath: relativePath || 'root'
+        relativePath: relativePath || 'root',
+        batchId: batchId || 'none',
+        importBatchId: importBatchId || 'none'
       });
 
       const response = await ApiService.postFormData<FileUploadResponse>(
@@ -105,23 +117,35 @@ class FileApiServiceClass {
    * Upload file to a specific folder
    * POST /api/folders/{folderId}/files
    */
-  async uploadFileToFolder(folderId: string, file: File): Promise<FileResponse> {
+  async uploadFileToFolder(folderId: string, file: File, batchId?: string, importBatchId?: string): Promise<FileResponse> {
     try {
       const formData = new FormData();
       formData.append('file', file);
       
+      // ALWAYS add batch_id if provided
+      if (batchId) {
+        formData.append('batch_id', batchId);
+      }
+      
+      // Add import_batch_id if provided (for folder uploads)
+      if (importBatchId) {
+        formData.append('import_batch_id', importBatchId);
+      }
+      
       // Add relativePath if available (for folder uploads with subfolders)
       const relativePath = 'webkitRelativePath' in file ? (file as File & { webkitRelativePath: string }).webkitRelativePath : '';
       if (relativePath) {
-        formData.append('relativePath', relativePath);
-        console.log(`� Including relativePath: ${relativePath}`);
+        formData.append('relative_path', relativePath);
+        console.log(`📁 Including relativePath: ${relativePath}`);
       }
 
-      console.log(`�📤 Uploading file to folder ${folderId}:`, {
+      console.log(`📤 Uploading file to folder ${folderId}:`, {
         name: file.name,
         size: file.size,
         type: file.type,
-        relativePath: relativePath || 'root'
+        relativePath: relativePath || 'root',
+        batchId: batchId || 'none',
+        importBatchId: importBatchId || 'none'
       });
 
       const response = await ApiService.postFormData<FileUploadResponse>(
@@ -442,6 +466,24 @@ class FileApiServiceClass {
     }
 
     return true;
+  }
+
+  /**
+   * Get extraction results for a file
+   * GET /api/files/{fileId}/extraction
+   */
+  async getFileExtraction(fileId: string): Promise<FileExtraction> {
+    try {
+      console.log(`📋 Getting extraction for file ${fileId}`);
+      
+      const response = await ApiService.get<FileExtraction>(`/files/${fileId}/extraction`);
+      
+      console.log('✅ File extraction retrieved successfully:', response);
+      return response;
+    } catch (error) {
+      console.error('❌ Failed to get file extraction:', error);
+      throw new Error(error instanceof Error ? error.message : 'Failed to get file extraction');
+    }
   }
 }
 

@@ -16,7 +16,9 @@ import { PdfService } from './services/pdfService';
 import { JsonService } from './services/jsonService';
 import { PublicJsonLoaderService } from './services/publicJsonLoaderService';
 import { FolderApiService } from './services/folderApiService';
+import { FileApiService } from './services/fileApiService';
 import { StorageMonitor } from './components/StorageMonitor/StorageMonitor';
+import { websocketService } from './services/websocketService';
 import type { FileData, Project, JsonData } from './types';
 import './App.css';
 
@@ -115,6 +117,8 @@ function App() {
       console.log('📋 Current projects:', projects.map(p => ({ id: p.id, name: p.name })));
     }
   }, [projects]);
+
+
 
   // IndexedDB storage hook
   const indexedDBStorage = useIndexedDBStorage();
@@ -916,6 +920,21 @@ function App() {
     try {
       console.log('🔄 Reloading JSON data for file:', selectedFile.name);
       
+      // First, try to load from extraction endpoint if file has extraction
+      if (selectedFile.hasExtraction) {
+        try {
+          console.log('🔍 Checking extraction endpoint for file:', selectedFile.id);
+          const extraction = await FileApiService.getFileExtraction(selectedFile.id);
+          if (extraction && extraction.status === 'completed' && extraction.extraction_json) {
+            console.log('✅ JSON data loaded from extraction endpoint');
+            updateJsonData(extraction.extraction_json);
+            return;
+          }
+        } catch (extractionError) {
+          console.warn('⚠️ Failed to load from extraction endpoint, trying IndexedDB:', extractionError);
+        }
+      }
+      
       // Try to load from IndexedDB
       let jsonData = await indexedDBStorage.getJsonData(selectedFile.id);
       if (jsonData) {
@@ -937,6 +956,42 @@ function App() {
       clearJsonData();
     }
   }, [selectedFile, currentProject, indexedDBStorage, updateJsonData, clearJsonData]);
+
+  // WebSocket connection management for real-time updates
+  useEffect(() => {
+    if (currentProject?.id) {
+      console.log(`🔌 Connecting to WebSocket for project: ${currentProject.id}`);
+      
+      // Connect to project WebSocket
+      websocketService.connect(currentProject.id);
+      
+      // Listen for file processing updates
+      const handleFileProcessed = (data: { file_id: string; batch_id: string; status: string; has_extraction: boolean }) => {
+        console.log('📨 File processed event received:', data);
+        // Refresh project data and files to get latest processing status
+        refreshProjects();
+        refreshApiFiles();
+        
+        // If the processed file is currently selected and processing completed with extraction,
+        // reload JSON data to show the latest extraction results
+        if (selectedFile?.id === data.file_id && data.status === 'completed' && data.has_extraction) {
+          console.log('🔄 Reloading JSON data for completed extraction');
+          setTimeout(() => reloadJsonData(), 1000); // Small delay to ensure backend is updated
+        }
+      };
+      
+      websocketService.on('file_processed', handleFileProcessed);
+      
+      return () => {
+        console.log(`🔌 Cleaning up WebSocket for project: ${currentProject.id}`);
+        websocketService.off('file_processed', handleFileProcessed);
+        websocketService.disconnect();
+      };
+    } else {
+      // No current project, ensure WebSocket is disconnected
+      websocketService.disconnect();
+    }
+  }, [currentProject?.id, refreshProjects, refreshApiFiles, reloadJsonData, selectedFile?.id]);
 
   // Auto-load content when selectedFile is restored (after refresh) - but only once per file
   useEffect(() => {

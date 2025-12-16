@@ -9,6 +9,9 @@ export interface FileData {
   projectId?: string; // Project association for filtering
   folderId?: string; // Folder association for organizing files within projects
   url?: string; // Backend URL for downloading/viewing the file
+  batchId?: string; // Batch ID for tracking upload groups
+  processingStatus?: 'pending' | 'processing' | 'completed' | 'failed';
+  hasExtraction?: boolean; // Whether extraction data is available
 }
 
 export interface JsonData {
@@ -39,6 +42,9 @@ export interface StoredFileData extends FileData {
   hasAssociatedJson?: boolean;
   projectId?: string;
   folderId?: string; // For files stored in folders
+  batchId?: string; // Batch ID for tracking upload groups
+  processingStatus?: 'pending' | 'processing' | 'completed' | 'failed';
+  hasExtraction?: boolean; // Whether extraction data is available
 }
 
 export interface ProjectStorage {
@@ -96,4 +102,14 @@ export interface ProjectFolder {
   isExpanded?: boolean; // For UI display
   relativePath?: string; // Full path from root for folder hierarchy (e.g., "documents/invoices")
   subfolderCount?: number; // Number of direct subfolders
+}
+
+export interface FileExtraction {
+  file_id: string;
+  batch_id: string;
+  status: 'pending' | 'processing' | 'completed' | 'failed';
+  extraction_json?: Record<string, unknown>;
+  error_message?: string;
+  created_at: string;
+  updated_at?: string;
 }

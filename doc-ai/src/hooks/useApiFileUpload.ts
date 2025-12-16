@@ -9,6 +9,16 @@ import { FileApiService } from '../services/fileApiService';
 import { FileUploadService } from '../services/fileUploadService';
 import { chunkedUploadService } from '../services/chunkedUploadService';
 
+// Utility function to generate batch ID
+const generateBatchId = (): string => {
+  return crypto.randomUUID();
+};
+
+// Utility function to generate import batch ID for folder uploads
+const generateImportBatchId = (): string => {
+  return crypto.randomUUID();
+};
+
 interface UseApiFileUploadOptions {
   currentProject?: Project | null;
   targetFolderId?: string | null;
@@ -59,6 +69,20 @@ export const useApiFileUpload = (options: UseApiFileUploadOptions = {}): UseApiF
     setUploadProgress(0);
     
     try {
+      // ALWAYS generate a batch_id for EVERY upload action
+      const batchId = generateBatchId();
+      
+      // For folder uploads (files with webkitRelativePath), also generate import_batch_id
+      const hasWebkitRelativePath = Array.from(fileList).some(file => 
+        'webkitRelativePath' in file && (file as File & { webkitRelativePath: string }).webkitRelativePath
+      );
+      const importBatchId = hasWebkitRelativePath ? generateImportBatchId() : undefined;
+      
+      console.log(`📦 Generated batch_id: ${batchId} for ${fileList.length} files`);
+      if (importBatchId) {
+        console.log(`📁 Generated import_batch_id: ${importBatchId} for folder upload`);
+      }
+      
       // Validate all files first
       const fileArray = Array.from(fileList);
       FileApiService.validateFiles(fileArray, 500 * 1024 * 1024); // 500MB limit for chunked uploads
@@ -99,7 +123,7 @@ export const useApiFileUpload = (options: UseApiFileUploadOptions = {}): UseApiF
                 onChunkComplete: (chunkIndex, total_chunks) => {
                   console.log(`✅ Chunk ${chunkIndex + 1}/${total_chunks} completed for ${file.name}`);
                 }
-              });
+              }, batchId);
               
               // Create API response format compatible with existing code
               apiResponse = { 
@@ -118,24 +142,24 @@ export const useApiFileUpload = (options: UseApiFileUploadOptions = {}): UseApiF
               
               // Fallback to regular upload
               if (folderId) {
-                console.log('📁 Fallback: Uploading large file to folder via regular upload:', { fileName: file.name, folderId });
-                apiResponse = await FileApiService.uploadFileToFolder(folderId, file);
+                console.log('📁 Fallback: Uploading large file to folder via regular upload:', { fileName: file.name, folderId, batchId, importBatchId });
+                apiResponse = await FileApiService.uploadFileToFolder(folderId, file, batchId, importBatchId);
                 console.log('✅ Large file uploaded to folder successfully via fallback:', apiResponse);
               } else {
-                console.log('📁 Fallback: Uploading large file to project root via regular upload:', { fileName: file.name, projectId });
-                apiResponse = await FileApiService.uploadFileToProject(projectId, file);
+                console.log('📁 Fallback: Uploading large file to project root via regular upload:', { fileName: file.name, projectId, batchId, importBatchId });
+                apiResponse = await FileApiService.uploadFileToProject(projectId, file, batchId, importBatchId);
                 console.log('✅ Large file uploaded to project root successfully via fallback:', apiResponse);
               }
             }
           } else {
             // Use regular upload for smaller files
             if (folderId) {
-              console.log('📁 Uploading file to folder:', { fileName: file.name, folderId });
-              apiResponse = await FileApiService.uploadFileToFolder(folderId, file);
+              console.log('📁 Uploading file to folder:', { fileName: file.name, folderId, batchId, importBatchId });
+              apiResponse = await FileApiService.uploadFileToFolder(folderId, file, batchId, importBatchId);
               console.log('✅ File uploaded to folder successfully:', apiResponse);
             } else {
-              console.log('📁 Uploading file to project root:', { fileName: file.name, projectId });
-              apiResponse = await FileApiService.uploadFileToProject(projectId, file);
+              console.log('📁 Uploading file to project root:', { fileName: file.name, projectId, batchId, importBatchId });
+              apiResponse = await FileApiService.uploadFileToProject(projectId, file, batchId, importBatchId);
               console.log('✅ File uploaded to project root successfully:', apiResponse);
             }
           }
