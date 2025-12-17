@@ -469,6 +469,24 @@ class FileApiServiceClass {
   }
 
   /**
+   * Get file processing status from MongoDB
+   * GET /api/files/{fileId}/status
+   */
+  async getFileStatus(fileId: string): Promise<{ file_id: string; status: string; message: string }> {
+    try {
+      console.log(`🔍 Getting status for file ${fileId}`);
+      
+      const response = await ApiService.get<{ file_id: string; status: string; message: string }>(`/files/${fileId}/status`);
+      
+      console.log('✅ File status retrieved successfully:', response);
+      return response;
+    } catch (error) {
+      console.error('❌ Failed to get file status:', error);
+      throw new Error(error instanceof Error ? error.message : 'Failed to get file status');
+    }
+  }
+
+  /**
    * Get extraction results for a file
    * GET /api/files/{fileId}/extraction
    */

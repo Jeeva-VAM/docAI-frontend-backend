@@ -10,7 +10,27 @@ interface FileProcessedEvent {
   has_extraction: boolean;
 }
 
-type WebSocketMessage = FileProcessedEvent;
+interface ExtractionCompletedEvent {
+  event: 'extraction_completed';
+  file_id: string;
+  filename: string;
+  status: 'completed';
+  has_structured_output: boolean;
+  json_url: string | null;
+  structured_output_url: string;
+  summary: {
+    total_fields: number;
+    filled_fields: number;
+    empty_fields: number;
+  };
+  total_fields: number;
+  filled_fields: number;
+  empty_fields: number;
+  timestamp: string;
+  project_id: string;
+}
+
+type WebSocketMessage = FileProcessedEvent | ExtractionCompletedEvent;
 
 class WebSocketService {
   private ws: WebSocket | null = null;
@@ -96,6 +116,16 @@ class WebSocketService {
     
     if (message.event === 'file_processed') {
       this.notifyListeners('file_processed', message);
+    } else if (message.event === 'extraction_completed') {
+      console.log('🎉 Extraction completed for file:', message.file_id);
+      this.notifyListeners('extraction_completed', message);
+      // Also trigger file_processed for backward compatibility
+      this.notifyListeners('file_processed', {
+        ...message,
+        event: 'file_processed',
+        batch_id: '',
+        has_extraction: message.has_structured_output
+      });
     }
   }
 
@@ -141,4 +171,4 @@ class WebSocketService {
 export const websocketService = new WebSocketService();
 
 // Types for external use
-export type { FileProcessedEvent, WebSocketMessage };
+export type { FileProcessedEvent, ExtractionCompletedEvent, WebSocketMessage };

@@ -12,6 +12,8 @@ import { useStorage } from './hooks/useStorage';
 import { useIndexedDBStorage } from './hooks/useIndexedDBStorage';
 import { useProjects } from './hooks/useProjects';
 import { useToast } from './hooks/useToast';
+import { useMongoDBExtraction } from './hooks/useMongoDBExtraction';
+import { useFileExtractionDisplay } from './hooks/useFileExtractionDisplay';
 import { PdfService } from './services/pdfService';
 import { JsonService } from './services/jsonService';
 import { PublicJsonLoaderService } from './services/publicJsonLoaderService';
@@ -150,6 +152,22 @@ function App() {
     }
   }, [indexedDBStorage.isInitialized, indexedDBStorage.error, indexedDBStorage.isLoading, isStorageReady]);
 
+  // Connect to WebSocket when project changes
+  useEffect(() => {
+    if (currentProject) {
+      console.log('🔌 Connecting WebSocket to project:', currentProject.id);
+      websocketService.connect(currentProject.id);
+    } else {
+      console.log('🔌 Disconnecting WebSocket (no project)');
+      websocketService.disconnect();
+    }
+    
+    return () => {
+      // Cleanup on unmount
+      websocketService.disconnect();
+    };
+  }, [currentProject]);
+
   // Restore currentProject from localStorage on app startup - ONLY ONCE
   useEffect(() => {
     if (hasRestoredProject) {
@@ -243,6 +261,16 @@ function App() {
     setPdfError,
     clearPdf,
   } = usePdfViewer();
+
+  // MongoDB extraction hook - CRITICAL: This is the ONLY gatekeeper for extraction rendering
+  const mongoExtraction = useMongoDBExtraction({
+    onExtractionLoaded: updateJsonData
+  });
+
+  // File extraction display hook for real-time status updates
+  const fileExtractionDisplay = useFileExtractionDisplay({
+    onExtractionDataReceived: updateJsonData
+  });
 
   // Use only API files from database - no local storage files
   let allFiles: FileData[] = [];
@@ -540,6 +568,7 @@ function App() {
     clearJsonData();
     clearPdf(); // This already clears PDF error
     setPdfLoading(false); // Ensure no lingering loading state
+    mongoExtraction.clearExtraction(); // Clear MongoDB extraction state
 
     // If this is a manual click, remove any existing tracking to allow reprocessing
     if (isManualClick && currentProject) {
@@ -679,7 +708,7 @@ function App() {
         setJsonError('JSON file content not available. Please re-upload the file.');
       }
     } else if (file.type === 'application/pdf') {
-      console.log('🔄 Processing PDF file...');
+      console.log('🔄 Processing PDF file - MongoDB GATED approach...');
       console.log('📊 File info:', {
         name: file.name,
         size: file.size,
@@ -720,98 +749,9 @@ function App() {
           }
         }
 
-        // First, try to load JSON data from IndexedDB (only for existing files, not new uploads)
-        try {
-          let jsonData: JsonData | null = null;
-
-          // Skip storage loading for new uploads - always generate fresh content
-          if (!isNewUpload) {
-            // Try to load from IndexedDB first
-            if (indexedDBStorage.isInitialized) {
-              try {
-                // First try by file ID
-                jsonData = await indexedDBStorage.getJsonData(file.id);
-                if (jsonData) {
-                  console.log('✅ JSON data loaded from IndexedDB by file ID');
-                } else {
-                  // If not found by file ID, try by content hash (same file with new ID)
-                  jsonData = await indexedDBStorage.getJsonDataByContent(file.name, file.size, file.lastModified);
-                  if (jsonData) {
-                    console.log('✅ JSON data loaded from IndexedDB by content hash (existing file with new ID)');
-                  }
-                }
-              } catch (dbError) {
-                console.warn('Failed to load JSON from IndexedDB:', dbError);
-              }
-            }
-          } else {
-            console.log('🆕 New upload detected - skipping storage lookup, will generate fresh content');
-          }
-
-          // If no data in IndexedDB, try to load from public folder, then extract from PDF
-          if (!jsonData) {
-            console.log('� Trying to load JSON from public folder for PDF:', file.name);
-            jsonData = await PublicJsonLoaderService.loadJsonForPdf(file.name);
-
-            if (jsonData) {
-              console.log('✅ JSON data loaded from public folder');
-              // Store in IndexedDB for future use
-              if (indexedDBStorage.isInitialized && currentProject && jsonData) {
-                try {
-                  await indexedDBStorage.storeJsonData(file.id, currentProject.id, jsonData, file.name, file.size, file.lastModified);
-                  console.log('✅ Public JSON stored in IndexedDB for future lookup');
-                } catch (dbError) {
-                  console.warn('Failed to store public JSON in IndexedDB:', dbError);
-                }
-              }
-            } else {
-              console.log('📝 No matching JSON in public folder, extracting from PDF...');
-              // Create a File object from the ArrayBuffer for PDF processing
-              const pdfFile = fileContent ? new File([fileContent], file.name, { type: 'application/pdf' }) : null;
-              if (pdfFile) {
-                // Create a proper FileData object for the PDF service
-                const pdfFileData: FileData = {
-                  id: file.id,
-                  name: file.name,
-                  type: file.type,
-                  size: file.size,
-                  lastModified: file.lastModified,
-                  content: fileContent,
-                  file: pdfFile
-                };
-                jsonData = await PdfService.extractJsonFromPdf(pdfFileData);
-                console.log('✅ PDF text extracted and converted to JSON');
-
-                // Store the extracted JSON in IndexedDB if we have a current project
-                if (indexedDBStorage.isInitialized && currentProject && jsonData) {
-                  try {
-                    await indexedDBStorage.storeJsonData(file.id, currentProject.id, jsonData, file.name, file.size, file.lastModified);
-                    console.log('✅ Extracted JSON stored in IndexedDB with content hash for future lookup');
-                  } catch (dbError) {
-                    console.warn('Failed to store JSON in IndexedDB:', dbError);
-                  }
-                }
-              } else {
-                console.log('❌ Cannot extract JSON - no PDF content available');
-              }
-            }
-          }
-
-          if (jsonData) {
-            updateJsonData(jsonData);
-          }
-        } catch (extractError) {
-          console.warn('⚠️ Failed to extract text from PDF:', extractError);
-
-          // Fallback: Check for auto-loading JSON file with same name
-          const associatedJson = findJsonForPdf(file.name);
-          if (associatedJson) {
-            console.log('🔗 Using associated JSON file instead');
-            updateJsonData(associatedJson);
-          } else {
-            console.log('ℹ️ No associated JSON found, will show PDF images only');
-          }
-        }
+        // 🚨 CRITICAL: MongoDB will be used ONLY when user manually clicks PDF
+        // Do NOT automatically call MongoDB extraction here
+        console.log('📄 PDF file selected - waiting for user click to trigger extraction');
 
         // Then, convert PDF to images for display (separate operation)
         try {
@@ -907,7 +847,8 @@ function App() {
     findJsonForPdf,
     setSelectedFileWithPersistence,
     currentProject,
-    indexedDBStorage
+    indexedDBStorage,
+    mongoExtraction
   ]);
 
   // Function to reload JSON data from IndexedDB for the current selected file
@@ -957,6 +898,25 @@ function App() {
     }
   }, [selectedFile, currentProject, indexedDBStorage, updateJsonData, clearJsonData]);
 
+  // Manual MongoDB extraction trigger - called when user clicks PDF
+  const triggerMongoDBExtraction = useCallback(async () => {
+    if (!selectedFile) {
+      console.warn('No file selected for MongoDB extraction');
+      return;
+    }
+    
+    console.log('🚨 [MANUAL TRIGGER] User clicked PDF - starting MongoDB extraction for:', selectedFile.name);
+    
+    try {
+      // Use MongoDB extraction hook to handle JSON loading
+      await mongoExtraction.handleFileClick(selectedFile.id);
+      
+      console.log('✅ MongoDB extraction triggered successfully');
+    } catch (error) {
+      console.error('❌ Failed to trigger MongoDB extraction:', error);
+    }
+  }, [selectedFile, mongoExtraction]);
+
   // WebSocket connection management for real-time updates
   useEffect(() => {
     if (currentProject?.id) {
@@ -972,11 +932,20 @@ function App() {
         refreshProjects();
         refreshApiFiles();
         
-        // If the processed file is currently selected and processing completed with extraction,
-        // reload JSON data to show the latest extraction results
-        if (selectedFile?.id === data.file_id && data.status === 'completed' && data.has_extraction) {
-          console.log('🔄 Reloading JSON data for completed extraction');
-          setTimeout(() => reloadJsonData(), 1000); // Small delay to ensure backend is updated
+        // 🚨 CRITICAL: WebSocket must NOT render JSON directly
+        // MongoDB status is the ONLY gatekeeper for extraction rendering
+        if (selectedFile?.id === data.file_id) {
+          console.log('🔄 [MONGODB] Re-checking status for currently selected file after WebSocket event');
+          
+          // Re-fetch MongoDB status instead of loading extraction directly
+          setTimeout(() => {
+            mongoExtraction.checkStatus(data.file_id).then((status) => {
+              console.log('✅ [MONGODB] Status re-checked after WebSocket event:', status);
+              // The MongoDB hook will automatically handle rendering if status === 'completed'
+            }).catch((error) => {
+              console.error('❌ [MONGODB] Failed to re-check status after WebSocket event:', error);
+            });
+          }, 1000); // Small delay to ensure backend MongoDB is updated
         }
       };
       
@@ -991,7 +960,7 @@ function App() {
       // No current project, ensure WebSocket is disconnected
       websocketService.disconnect();
     }
-  }, [currentProject?.id, refreshProjects, refreshApiFiles, reloadJsonData, selectedFile?.id]);
+  }, [currentProject?.id, refreshProjects, refreshApiFiles, selectedFile?.id, mongoExtraction]);
 
   // Auto-load content when selectedFile is restored (after refresh) - but only once per file
   useEffect(() => {
@@ -1042,8 +1011,15 @@ function App() {
   // Wrapper for manual file selection (when user clicks on file)
   const handleManualFileSelect = useCallback((file: FileData) => {
     console.log('👆 Manual file selection triggered for:', file.name, 'in project:', currentProject?.name);
+    
+    // First select the file for the UI
     handleFileSelect(file, true, false); // isManualClick=true, isNewUpload=false (existing file selection)
-  }, [handleFileSelect, currentProject]);
+    
+    // Then trigger the extraction display logic for real-time status
+    if (file.type === 'application/pdf') {
+      fileExtractionDisplay.handleFileClick(file.id, file.name);
+    }
+  }, [handleFileSelect, currentProject, fileExtractionDisplay]);
 
   // Storage cleanup function
   const clearAllStorage = useCallback(async () => {
@@ -1181,14 +1157,17 @@ function App() {
       case 'extract':
         return (
           <ExtractPage
-            jsonData={jsonData}
+            // 🚨 CRITICAL: Use MongoDB extraction data ONLY when status is completed
+            jsonData={mongoExtraction.extractionStatus.status === 'completed' ? mongoExtraction.extractionData.structured_output || null : null}
             viewMode={viewMode}
-            jsonError={jsonError}
+            // Show MongoDB extraction error or old JSON error as fallback
+            jsonError={mongoExtraction.extractionData.error || jsonError}
             onToggleViewMode={toggleViewMode}
             onUpdateJsonData={updateJsonData}
             onReloadJsonData={reloadJsonData}
             pdfPages={pdfPages}
             currentPage={currentPage}
+            // Show loading only for PDF operations (MongoDB loading handled in ExtractPage)
             isLoading={pdfLoading}
             pdfError={pdfError}
             totalPages={totalPages}
@@ -1202,6 +1181,12 @@ function App() {
             indexedDBService={indexedDBStorage}
             showError={showError}
             showWarning={showWarning}
+            // Add MongoDB status for display in UI
+            mongodbStatus={mongoExtraction.extractionStatus}
+            // Manual extraction trigger
+            onTriggerExtraction={triggerMongoDBExtraction}
+            // File extraction display state for real-time updates
+            fileExtractionState={fileExtractionDisplay.fileState}
           />
         );
       default:

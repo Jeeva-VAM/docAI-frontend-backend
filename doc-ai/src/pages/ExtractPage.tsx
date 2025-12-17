@@ -3,9 +3,17 @@ import { JsonViewer } from '../components/JsonViewer';
 import { PdfViewer } from '../components/PdfViewer';
 import { PdfViewerAsImages } from '../components/PdfViewer/PdfViewerAsImages';
 import { ResizableDivider } from '../components/ResizableDivider';
+import { FileExtractionViewer } from '../components/FileExtractionViewer/FileExtractionViewer';
 import type { FileData } from '../types';
 import type { Annotation } from '../components/PdfAnnotationCanvas';
 import './ExtractPage.css';
+
+// MongoDB extraction status interface
+interface ExtractionStatus {
+  status: 'processing_extractions' | 'processing_to_ai' | 'completed' | 'failed' | 'unknown';
+  message: string;
+  isLoading: boolean;
+}
 
 interface ExtractPageProps {
   // JSON Viewer Props
@@ -38,6 +46,26 @@ interface ExtractPageProps {
   // Toast notifications
   showError?: (title: string, message?: string, duration?: number) => void;
   showWarning?: (title: string, message?: string, duration?: number) => void;
+
+  // MongoDB extraction status - CRITICAL for gating
+  mongodbStatus?: ExtractionStatus;
+
+  // Manual MongoDB extraction trigger
+  onTriggerExtraction?: () => Promise<void>;
+
+  // File extraction display state for real-time updates
+  fileExtractionState?: {
+    fileId: string | null;
+    status: 'idle' | 'loading' | 'completed' | 'failed';
+    filename?: string;
+    error?: string;
+    extractionData?: {
+      structured_output: Record<string, unknown>;
+      total_fields: number;
+      filled_fields: number;
+      empty_fields: number;
+    };
+  };
 }
 
 export function ExtractPage({
@@ -70,9 +98,20 @@ export function ExtractPage({
 
   // Toast notifications
   showError,
-  showWarning
+  showWarning,
+
+  // MongoDB extraction status
+  mongodbStatus,
+
+  // Manual extraction trigger
+  onTriggerExtraction,
+
+  // File extraction display state
+  fileExtractionState
 }: ExtractPageProps) {
   const [leftPanelWidth, setLeftPanelWidth] = useState(50);
+  // Track if extraction was triggered by user click
+  const [extractionTriggered, setExtractionTriggered] = useState(false);
 
   // Get PDF content for text extraction
   const pdfContent = selectedFile?.type === 'application/pdf' && selectedFile?.content instanceof ArrayBuffer
@@ -212,18 +251,71 @@ export function ExtractPage({
           }
         }}
       >
-        <JsonViewer
-          jsonData={jsonData}
-          viewMode={viewMode}
-          error={jsonError}
-          onToggleViewMode={onToggleViewMode}
-          onFieldSelect={handleFieldSelect}
-          showAllAnnotations={showAllAnnotations}
-          onToggleShowAll={handleToggleShowAll}
-          onShowAllFields={handleShowAllFields}
-          currentFileId={selectedFile?.id}
-          onAnnotationDeleted={handleAnnotationDeleted}
-        />
+        {/* 🚨 CRITICAL: MongoDB is the ONLY gatekeeper for extraction rendering */}
+        {mongodbStatus?.status === 'completed' ? (
+          // Only render JsonViewer if MongoDB status is completed
+          <JsonViewer
+            jsonData={jsonData}
+            viewMode={viewMode}
+            error={jsonError}
+            onToggleViewMode={onToggleViewMode}
+            onFieldSelect={handleFieldSelect}
+            showAllAnnotations={showAllAnnotations}
+            onToggleShowAll={handleToggleShowAll}
+            onShowAllFields={handleShowAllFields}
+            currentFileId={selectedFile?.id}
+            onAnnotationDeleted={handleAnnotationDeleted}
+          />
+        ) : extractionTriggered && (mongodbStatus?.isLoading || mongodbStatus?.status === 'processing_extractions' || mongodbStatus?.status === 'processing_to_ai') ? (
+          // Show spinner only when actively processing AND after user click
+          <div className="mongodb-status-container" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            padding: '2rem',
+            textAlign: 'center'
+          }}>
+            {/* Loading Spinner */}
+            <div className="loading-spinner" style={{
+              width: '40px',
+              height: '40px',
+              border: '4px solid #f3f3f3',
+              borderTop: '4px solid #3498db',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              marginBottom: '1rem'
+            }}></div>
+            
+            {/* Status Text Below Spinner */}
+            <div className="mongodb-status-text" style={{
+              fontSize: '16px',
+              color: '#666',
+              marginBottom: '0.5rem'
+            }}>
+              {mongodbStatus?.message || 'Processing extraction...'}
+            </div>
+            
+            {/* Raw MongoDB Status */}
+            <div className="mongodb-raw-status" style={{
+              fontSize: '14px',
+              color: '#888',
+              fontFamily: 'monospace'
+            }}>
+              Status: {mongodbStatus?.status || 'unknown'}
+            </div>
+          </div>
+        ) : (
+          // Use FileExtractionViewer for all states
+          <FileExtractionViewer
+            fileState={fileExtractionState || { fileId: null, status: 'idle' }}
+            jsonData={jsonData}
+            jsonError={jsonError || undefined}
+            onToggleViewMode={onToggleViewMode}
+            viewMode={viewMode}
+          />
+        )}
       </div>
 
       {/* Resizable Divider */}
@@ -243,6 +335,14 @@ export function ExtractPage({
             el.style.setProperty('width', `${100 - leftPanelWidth}%`);
           }
         }}
+        onClick={async () => {
+          if (onTriggerExtraction && selectedFile?.type === 'application/pdf') {
+            setExtractionTriggered(true);
+            console.log('🖱️ PDF clicked - triggering MongoDB extraction');
+            await onTriggerExtraction();
+          }
+        }}
+        style={{ cursor: selectedFile?.type === 'application/pdf' ? 'pointer' : 'default' }}
       >
         {/* PDF as images */}
         {selectedFile?.type === 'application/pdf' && selectedFile.id && (
